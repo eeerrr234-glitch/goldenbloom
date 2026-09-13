@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="용인 꽃다발·꽃바구니 제작, 골든블룸. 비누꽃다발, 인형꽃다발, 꽃바구니를 정성껏 제작합니다." />
-  <title>골든블룸 | 용인 꽃다발·꽃바구니</title>
+  <meta charset="UTF-8">
+
+  <!-- 스마트폰 반응형 필수 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 검색엔진 기본 정보 -->
+  <meta
+    name="description"
+    content="용인 남사 꽃다발·꽃바구니 맞춤 제작 골든블룸. 졸업, 입학, 생일, 기념일, 감사, 프로포즈 꽃선물을 정성껏 제작합니다."
+  >
+
+  <meta
+    name="keywords"
+    content="용인 꽃다발, 용인 꽃바구니, 남사 꽃다발, 남사 꽃바구니, 비누꽃다발, 인형꽃다발, 골든블룸"
+  >
+
+  <title>골든블룸 | 용인 남사 꽃다발 · 꽃바구니</title>
+
 
   <style>
+
+    /* =====================================================
+       1. 기본 컬러
+    ===================================================== */
+
     :root {
-      --cream: #fffaf3;
-      --ivory: #fffdf8;
-      --peach: #f4d8c8;
-      --yellow: #f7e7a7;
-      --brown: #6b5144;
-      --deep-brown: #49352c;
-      --gold: #c79b47;
-      --green: #7d8f70;
+      --bg: #fffaf6;
       --white: #ffffff;
-      --shadow: 0 12px 30px rgba(80, 55, 40, .12);
-      --radius: 24px;
+
+      --text: #3e2a25;
+      --sub: #806c63;
+
+      --gold: #b8892e;
+      --gold-light: #d4ab56;
+
+      --pink: #dc7d91;
+      --pink-light: #eaa8b5;
+
+      --line: #eadfd9;
+
+      --shadow:
+        0 14px 35px rgba(75, 50, 40, 0.12);
+
+      --radius: 22px;
     }
+
+
+    /* =====================================================
+       2. 기본 초기화
+    ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -32,11 +63,15 @@
     }
 
     body {
-      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-      color: var(--deep-brown);
-      background:
-        radial-gradient(circle at top left, rgba(247,231,167,.35), transparent 28%),
-        linear-gradient(180deg, var(--ivory), var(--cream));
+      font-family:
+        "Pretendard",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+      background: var(--bg);
+
       line-height: 1.65;
     }
 
@@ -45,802 +80,2368 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
     .container {
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 88px 0;
+
+    /* =====================================================
+       3. 상단 작은 안내 바
+    ===================================================== */
+
+    .topbar {
+      background: #f8f0ea;
+
+      border-bottom:
+        1px solid rgba(80, 60, 50, 0.07);
+
+      font-size: 0.82rem;
+      color: #6f625b;
     }
 
-    .section-head {
-      margin-bottom: 36px;
-    }
+    .topbar-inner {
+      min-height: 34px;
 
-    .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      font-weight: 800;
-      font-size: .9rem;
-      letter-spacing: .08em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+      justify-content: space-between;
+
+      gap: 16px;
     }
 
-    h1, h2, h3 {
-      letter-spacing: -0.04em;
+    .top-links {
+      display: flex;
+      align-items: center;
+
+      gap: 15px;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
 
-    .section-copy {
-      color: #806b60;
-      max-width: 680px;
-    }
+    /* =====================================================
+       4. 헤더 / 메뉴
+    ===================================================== */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 250, 243, .9);
+
+      z-index: 100;
+
+      background:
+        rgba(255, 255, 255, 0.95);
+
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(107,81,68,.08);
+
+      border-bottom:
+        1px solid rgba(80, 60, 50, 0.08);
     }
+
 
     .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+      min-height: 96px;
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      font-size: 1.25rem;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
       display: grid;
-      place-items: center;
-      color: white;
-      background: linear-gradient(135deg, #e1bf62, #bd8d37);
-      box-shadow: 0 8px 20px rgba(199,155,71,.25);
+
+      grid-template-columns:
+        230px
+        1fr
+        auto;
+
+      gap: 26px;
+
+      align-items: center;
     }
+
+
+    /* =====================================================
+       5. 로고
+    ===================================================== */
+
+    .logo {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      line-height: 1;
+    }
+
+    .logo-en {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
+
+      font-size: 2rem;
+
+      color: #9c7429;
+    }
+
+    .logo-ko {
+      margin-top: 7px;
+
+      margin-left: 54px;
+
+      font-size: 0.77rem;
+
+      letter-spacing: 0.25em;
+
+      color: #a67a2d;
+
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
+       6. PC 메뉴
+    ===================================================== */
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 26px;
-      color: #735f54;
+
+      justify-content: center;
+
+      gap: 40px;
+
+      font-size: 1rem;
+
       font-weight: 700;
-      font-size: .95rem;
     }
 
-    .nav-links a:hover {
-      color: var(--gold);
+    .nav-links a {
+      position: relative;
     }
 
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      color: white !important;
-      background: linear-gradient(135deg, #cda34f, #e0b861);
-      box-shadow: 0 8px 20px rgba(199,155,71,.24);
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      right: 100%;
+
+      bottom: -7px;
+
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--pink),
+          var(--gold)
+        );
+
+      transition: 0.25s;
     }
+
+    .nav-links a:hover::after {
+      right: 0;
+    }
+
+
+    /* 카카오톡 버튼 */
+
+    .kakao-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding:
+        13px 22px;
+
+      border-radius:
+        999px;
+
+      color: #ffffff;
+
+      font-weight: 800;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--pink-light)
+        );
+
+      box-shadow:
+        0 10px 24px
+        rgba(220, 125, 145, 0.24);
+    }
+
+
+    /* 모바일 메뉴 버튼 */
 
     .menu-btn {
       display: none;
+
       border: 0;
-      background: transparent;
+
+      background: none;
+
       font-size: 1.6rem;
+
       cursor: pointer;
     }
 
+
+
+    /* =====================================================
+       7. 메인 슬라이드 영역
+    ===================================================== */
+
     .hero {
-      padding: 84px 0 70px;
+      position: relative;
+
       overflow: hidden;
+
+      background: #eee6df;
     }
 
-    .hero-grid {
+
+    .hero-slide {
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      max-height: 740px;
+
+      min-height: 420px;
+    }
+
+
+    /*
+       ★ 메인 이미지
+       같은 폴더에
+       golden-bloom-main.png
+       파일을 넣으면 됩니다.
+    */
+
+    .hero-slide img {
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+    }
+
+
+    /* 이미지 위 아주 약한 오버레이 */
+
+    .hero-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.06),
+          transparent 55%,
+          rgba(40, 25, 20, 0.03)
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* 좌우 화살표 */
+
+    .arrow {
+      position: absolute;
+
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+
+      width: 50px;
+
+      height: 50px;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 48px;
-      align-items: center;
+
+      place-items: center;
+
+      background:
+        rgba(55, 40, 32, 0.45);
+
+      color: #ffffff;
+
+      font-size: 1.5rem;
+
+      z-index: 3;
+
+      cursor: pointer;
+
+      backdrop-filter:
+        blur(4px);
     }
 
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5.3rem);
-      line-height: 1.05;
-      margin-bottom: 24px;
+    .arrow-left {
+      left: 28px;
     }
 
-    .hero h1 span {
-      color: var(--gold);
+    .arrow-right {
+      right: 28px;
     }
 
-    .hero p {
-      font-size: 1.08rem;
-      color: #79675e;
-      max-width: 620px;
-      margin-bottom: 28px;
-    }
 
-    .hero-actions {
+    /* 슬라이드 점 */
+
+    .slider-dots {
+      position: absolute;
+
+      bottom: 18px;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      z-index: 4;
+
+      background:
+        rgba(255, 255, 255, 0.80);
+
+      border-radius:
+        999px;
+
+      padding:
+        8px 12px;
+
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+
+      gap: 8px;
+
+      box-shadow:
+        0 8px 20px
+        rgba(70, 50, 40, 0.10);
     }
+
+    .slider-dots span {
+      width: 10px;
+
+      height: 10px;
+
+      border-radius:
+        50%;
+
+      background:
+        #dfd2cb;
+    }
+
+    .slider-dots span.active {
+      background:
+        var(--pink);
+    }
+
+
+
+    /* =====================================================
+       8. 서비스 장점 영역
+    ===================================================== */
+
+    .benefits {
+      background: #ffffff;
+
+      border-bottom:
+        1px solid
+        var(--line);
+    }
+
+    .benefit-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+    }
+
+
+    .benefit {
+      padding:
+        24px 20px;
+
+      display: grid;
+
+      grid-template-columns:
+        58px 1fr;
+
+      gap: 15px;
+
+      align-items: center;
+
+      border-right:
+        1px solid
+        var(--line);
+    }
+
+    .benefit:last-child {
+      border-right: 0;
+    }
+
+
+    .icon {
+      width: 54px;
+
+      height: 54px;
+
+      border-radius:
+        50%;
+
+      display: grid;
+
+      place-items: center;
+
+      font-size: 1.4rem;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fce7eb,
+          #f8d7de
+        );
+
+      color:
+        #c95972;
+    }
+
+
+    .benefit strong {
+      display: block;
+
+      font-size:
+        0.98rem;
+
+      margin-bottom:
+        3px;
+    }
+
+    .benefit span {
+      color:
+        #88766d;
+
+      font-size:
+        0.85rem;
+    }
+
+
+
+    /* =====================================================
+       9. 공통 섹션
+    ===================================================== */
+
+    .section {
+      padding:
+        82px 0;
+    }
+
+
+    .section-head {
+      text-align:
+        center;
+
+      margin-bottom:
+        34px;
+    }
+
+
+    .eyebrow {
+      color:
+        #ad876d;
+
+      letter-spacing:
+        0.22em;
+
+      font-size:
+        0.85rem;
+
+      font-weight:
+        700;
+
+      margin-bottom:
+        7px;
+    }
+
+
+    .section-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.1rem
+        );
+
+      line-height:
+        1.15;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .section-copy {
+      color:
+        var(--sub);
+    }
+
+
+
+    /* =====================================================
+       10. 상품 영역
+    ===================================================== */
+
+    .collection {
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #fffaf6
+        );
+    }
+
+
+    .product-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        18px;
+    }
+
+
+    .product-card {
+      overflow:
+        hidden;
+
+      border-radius:
+        18px;
+
+      background:
+        #ffffff;
+
+      box-shadow:
+        var(--shadow);
+
+      border:
+        1px solid
+        rgba(90, 70, 60, 0.07);
+
+      transition:
+        0.3s;
+    }
+
+    .product-card:hover {
+      transform:
+        translateY(-6px);
+    }
+
+
+    .product-img {
+      aspect-ratio:
+        4 / 3;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+    }
+
+
+    /*
+      현재는 샘플 컬러 이미지입니다.
+
+      나중에 실제 꽃다발 사진을 넣을 경우:
+
+      <div class="product-img">
+          <img src="bouquet.jpg">
+      </div>
+
+      형태로 넣으면 됩니다.
+    */
+
+
+    .product-img::before {
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        radial-gradient(
+          circle at 35% 38%,
+          #efb5bd 0 12%,
+          transparent 13%
+        ),
+
+        radial-gradient(
+          circle at 55% 34%,
+          #f6d8a9 0 12%,
+          transparent 13%
+        ),
+
+        radial-gradient(
+          circle at 68% 52%,
+          #d4dfc1 0 12%,
+          transparent 13%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ead0c6,
+          #f8e5c3
+        );
+    }
+
+
+    .product-card:nth-child(2)
+    .product-img::before {
+
+      background:
+        radial-gradient(
+          circle at 30% 45%,
+          #f2c5cb 0 11%,
+          transparent 12%
+        ),
+
+        radial-gradient(
+          circle at 52% 35%,
+          #f9e5b9 0 11%,
+          transparent 12%
+        ),
+
+        radial-gradient(
+          circle at 69% 49%,
+          #dbe4c4 0 11%,
+          transparent 12%
+        ),
+
+        linear-gradient(
+          135deg,
+          #d6b78d,
+          #efd3ae
+        );
+    }
+
+
+    .product-card:nth-child(3)
+    .product-img::before {
+
+      background:
+        radial-gradient(
+          circle at 35% 38%,
+          #f1c2c9 0 13%,
+          transparent 14%
+        ),
+
+        radial-gradient(
+          circle at 60% 42%,
+          #f7e5b7 0 13%,
+          transparent 14%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ebd3c7,
+          #f6dfc9
+        );
+    }
+
+
+    .product-card:nth-child(4)
+    .product-img::before {
+
+      background:
+        radial-gradient(
+          circle at 36% 40%,
+          #f1c2c9 0 12%,
+          transparent 13%
+        ),
+
+        radial-gradient(
+          circle at 65% 44%,
+          #fff0c8 0 12%,
+          transparent 13%
+        ),
+
+        radial-gradient(
+          circle at 54% 58%,
+          #c9a77f 0 15%,
+          transparent 16%
+        ),
+
+        linear-gradient(
+          135deg,
+          #edd3c5,
+          #f8e4bd
+        );
+    }
+
+
+    .product-body {
+      padding:
+        18px
+        18px
+        20px;
+    }
+
+    .product-body h3 {
+      font-size:
+        1.15rem;
+
+      margin-bottom:
+        2px;
+    }
+
+    .product-body small {
+      color:
+        #9a887f;
+    }
+
+
+
+    /* =====================================================
+       11. 브랜드 소개
+    ===================================================== */
+
+    .about-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        48px;
+
+      align-items:
+        center;
+    }
+
+
+    .about-img {
+      border-radius:
+        24px;
+
+      overflow:
+        hidden;
+
+      box-shadow:
+        var(--shadow);
+
+      aspect-ratio:
+        4 / 3;
+    }
+
+    .about-img img {
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+    }
+
+
+    .about-text h2 {
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3rem
+        );
+
+      line-height:
+        1.25;
+
+      margin-bottom:
+        18px;
+    }
+
+
+    .about-text p {
+      color:
+        var(--sub);
+
+      margin-bottom:
+        24px;
+    }
+
+
+    .about-list {
+      display:
+        grid;
+
+      gap:
+        14px;
+    }
+
+
+    .about-item {
+      display:
+        grid;
+
+      grid-template-columns:
+        44px 1fr;
+
+      gap:
+        12px;
+
+      align-items:
+        start;
+    }
+
+
+    .about-item .icon {
+      width:
+        44px;
+
+      height:
+        44px;
+
+      font-size:
+        1.1rem;
+    }
+
+
+
+    /* =====================================================
+       12. 문의 영역
+    ===================================================== */
+
+    .contact {
+      background:
+        linear-gradient(
+          135deg,
+          #695046,
+          #8b6b5d 58%,
+          #a47c6b
+        );
+
+      color:
+        #ffffff;
+    }
+
+
+    .contact-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        1.15fr 0.85fr;
+
+      gap:
+        40px;
+
+      align-items:
+        center;
+    }
+
+
+    .contact h2 {
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.2rem
+        );
+
+      line-height:
+        1.2;
+
+      margin-bottom:
+        15px;
+    }
+
+
+    .contact p {
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.80
+        );
+
+      margin-bottom:
+        24px;
+    }
+
+
+    .contact-actions {
+      display:
+        flex;
+
+      gap:
+        12px;
+
+      flex-wrap:
+        wrap;
+    }
+
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 20px;
-      border-radius: 14px;
-      font-weight: 800;
-      transition: .25s ease;
-      border: 1px solid rgba(107,81,68,.12);
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        8px;
+
+      padding:
+        14px 20px;
+
+      border-radius:
+        14px;
+
+      font-weight:
+        800;
+
+      transition:
+        0.25s;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-3px);
     }
+
 
     .btn-primary {
-      color: white;
-      border: 0;
-      background: linear-gradient(135deg, #d0a84f, #e7c676 65%, #f0d590);
-      box-shadow: 0 12px 24px rgba(199,155,71,.24);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,.8);
-      color: var(--brown);
-      box-shadow: 0 10px 22px rgba(80,55,40,.08);
-    }
-
-    .hero-art {
-      min-height: 500px;
-      position: relative;
-      display: grid;
-      place-items: center;
-    }
-
-    .bouquet-shape {
-      width: 90%;
-      aspect-ratio: 1 / 1;
-      border-radius: 40% 60% 44% 56% / 47% 39% 61% 53%;
       background:
-        radial-gradient(circle at 28% 32%, #f6d5d3 0 9%, transparent 10%),
-        radial-gradient(circle at 45% 28%, #f4e3a9 0 10%, transparent 11%),
-        radial-gradient(circle at 64% 36%, #ead3db 0 11%, transparent 12%),
-        radial-gradient(circle at 34% 53%, #fff0d4 0 11%, transparent 12%),
-        radial-gradient(circle at 58% 56%, #d8e0bd 0 11%, transparent 12%),
-        radial-gradient(circle at 46% 72%, #e9c1b8 0 10%, transparent 11%),
-        linear-gradient(135deg, #f4d8c8, #f7e7a7 48%, #d6dfc2);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+        linear-gradient(
+          135deg,
+          #d79a4b,
+          #e8bd73
+        );
+
+      color:
+        #ffffff;
     }
 
-    .bouquet-shape::after {
-      content: "";
-      position: absolute;
-      width: 46%;
-      height: 52%;
-      left: 27%;
-      bottom: -6%;
-      background: linear-gradient(160deg, #d7bb91, #f4e2c4);
-      clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
-      opacity: .9;
-    }
 
-    .floating-note {
-      position: absolute;
-      padding: 15px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow);
-      font-weight: 800;
-    }
-
-    .note-a { left: 0; bottom: 50px; }
-    .note-b { right: 0; top: 56px; }
-
-    .floating-note small {
-      display: block;
-      font-weight: 600;
-      color: #917c70;
-      margin-top: 3px;
-    }
-
-    .service-strip {
-      margin-top: 38px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .service-chip {
-      padding: 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(107,81,68,.08);
-    }
-
-    .service-chip strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .service-chip span {
-      color: #8b776d;
-      font-size: .92rem;
-    }
-
-    .products {
-      background: linear-gradient(180deg, rgba(247,231,167,.20), rgba(255,255,255,.7));
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 210px;
-      gap: 18px;
-    }
-
-    .product-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      min-height: 210px;
-      isolation: isolate;
-    }
-
-    .product-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 35%, rgba(57,40,31,.68));
-      z-index: 1;
-    }
-
-    .product-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
+    .btn-light {
       background:
-        radial-gradient(circle at 28% 34%, #f6d5d3 0 10%, transparent 11%),
-        radial-gradient(circle at 48% 36%, #f7e7a7 0 11%, transparent 12%),
-        radial-gradient(circle at 68% 42%, #d5dfbd 0 10%, transparent 11%),
-        linear-gradient(135deg, #ead2c6, #f9ebbf 54%, #d7dfc6);
-      transform: scale(1.02);
+        #ffffff;
+
+      color:
+        #5f463b;
     }
 
-    .product-card .content {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 18px;
-      color: white;
-      z-index: 2;
-    }
-
-    .product-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 4px;
-    }
-
-    .product-card p {
-      font-size: .92rem;
-      opacity: .9;
-    }
-
-    .p1 { grid-column: span 5; grid-row: span 2; }
-    .p2 { grid-column: span 4; }
-    .p3 { grid-column: span 3; }
-    .p4 { grid-column: span 3; }
-    .p5 { grid-column: span 4; }
-
-    .p2::after {
-      background:
-        radial-gradient(circle at 36% 40%, #f4cbc8 0 13%, transparent 14%),
-        radial-gradient(circle at 62% 40%, #f7e7a7 0 12%, transparent 13%),
-        linear-gradient(135deg, #ead0c3, #f7dfb8);
-    }
-
-    .p3::after {
-      background:
-        radial-gradient(circle at 50% 42%, #e2d0dc 0 18%, transparent 19%),
-        linear-gradient(135deg, #dfc8d6, #f7e6ef);
-    }
-
-    .p4::after {
-      background:
-        radial-gradient(circle at 40% 38%, #f8deb9 0 14%, transparent 15%),
-        radial-gradient(circle at 62% 48%, #d8e2bf 0 13%, transparent 14%),
-        linear-gradient(135deg, #f0d0b3, #f5e7c2);
-    }
-
-    .p5::after {
-      background:
-        radial-gradient(circle at 28% 40%, #f4cbc8 0 11%, transparent 12%),
-        radial-gradient(circle at 50% 35%, #fff0c8 0 11%, transparent 12%),
-        radial-gradient(circle at 70% 43%, #dce5c7 0 11%, transparent 12%),
-        linear-gradient(135deg, #edd0c3, #f8e9bd);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .about-art {
-      min-height: 420px;
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 30% 32%, #f5d4d0 0 12%, transparent 13%),
-        radial-gradient(circle at 60% 28%, #f7e5aa 0 12%, transparent 13%),
-        radial-gradient(circle at 43% 58%, #d9e0c4 0 13%, transparent 14%),
-        linear-gradient(135deg, #f0d8ca, #fbefcb);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-art::before {
-      content: "GOLDEN BLOOM";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: rgba(255,255,255,.94);
-      font-family: Georgia, serif;
-      font-size: clamp(2rem, 5vw, 4.2rem);
-      font-weight: 800;
-      text-align: center;
-      text-shadow: 0 6px 20px rgba(70,50,40,.16);
-    }
-
-    .about-list {
-      margin-top: 26px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .about-item {
-      display: grid;
-      grid-template-columns: 46px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(107,81,68,.10);
-    }
-
-    .icon-box {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: linear-gradient(135deg, #cfa450, #e7c878);
-      box-shadow: 0 8px 18px rgba(199,155,71,.22);
-      font-size: 1.2rem;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, #6c5245, #8f6c58 55%, #a68166);
-      color: white;
-    }
-
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .contact .section-copy {
-      color: rgba(255,255,255,.78);
-    }
 
     .contact-card {
-      padding: 28px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(8px);
+      padding:
+        26px;
+
+      border-radius:
+        22px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.10
+        );
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.18
+        );
+
+      backdrop-filter:
+        blur(8px);
     }
 
-    .contact-card div {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.14);
+
+    .contact-row {
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        18px;
+
+      padding:
+        13px 0;
+
+      border-bottom:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.14
+        );
     }
 
-    .contact-card div:last-child {
-      border-bottom: 0;
+
+    .contact-row:last-child {
+      border-bottom:
+        0;
     }
+
+
+
+    /* =====================================================
+       13. 푸터
+    ===================================================== */
 
     footer {
-      padding: 34px 0 42px;
-      background: #3a2c25;
-      color: rgba(255,255,255,.72);
+      background:
+        #30231e;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.72
+        );
+
+      padding:
+        34px 0;
     }
+
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: end;
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      gap:
+        20px;
+
+      align-items:
+        end;
     }
+
 
     .footer-brand {
-      color: white;
-      font-weight: 900;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
+      color:
+        #ffffff;
+
+      font-weight:
+        900;
+
+      margin-bottom:
+        6px;
     }
 
-    .small {
-      font-size: .88rem;
-    }
+
+
+    /* =====================================================
+       14. 태블릿 반응형
+    ===================================================== */
 
     @media (max-width: 980px) {
-      .nav-links {
-        display: none;
+
+      .topbar-inner {
+        justify-content:
+          center;
       }
+
+      .top-links {
+        display:
+          none;
+      }
+
+
+      .nav {
+        min-height:
+          76px;
+
+        grid-template-columns:
+          1fr auto;
+      }
+
+
+      .nav-links,
+      .kakao-btn {
+        display:
+          none;
+      }
+
 
       .menu-btn {
-        display: block;
+        display:
+          block;
       }
 
-      .hero-grid,
-      .about-grid,
-      .contact-wrap {
-        grid-template-columns: 1fr;
+
+      .logo-en {
+        font-size:
+          1.65rem;
       }
 
-      .hero {
-        padding-top: 56px;
+
+      .logo-ko {
+        margin-left:
+          40px;
       }
 
-      .hero-art {
-        min-height: 420px;
+
+      .hero-slide {
+        min-height:
+          380px;
+
+        aspect-ratio:
+          16 / 9;
       }
+
+
+      .benefit-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+      }
+
+
+      .benefit:nth-child(2) {
+        border-right:
+          0;
+      }
+
+
+      .benefit:nth-child(-n + 2) {
+        border-bottom:
+          1px solid
+          var(--line);
+      }
+
 
       .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 230px;
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
       }
 
-      .p1,.p2,.p3,.p4,.p5 {
-        grid-column: span 1;
-        grid-row: span 1;
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns:
+          1fr;
       }
 
-      .p1 {
-        grid-column: span 2;
-      }
     }
+
+
+
+    /* =====================================================
+       15. 스마트폰 반응형
+    ===================================================== */
 
     @media (max-width: 640px) {
+
       .container {
-        width: min(100% - 22px, 1180px);
+        width:
+          min(
+            100% - 22px,
+            1180px
+          );
       }
+
+
+      .topbar {
+        display:
+          none;
+      }
+
+
+      .nav {
+        min-height:
+          68px;
+      }
+
+
+      .logo-en {
+        font-size:
+          1.42rem;
+      }
+
+
+      .logo-ko {
+        font-size:
+          0.65rem;
+
+        margin-left:
+          34px;
+      }
+
+
+      /*
+        모바일에서는
+        16:9 사진을 세로로 크게 보이게 합니다.
+      */
+
+      .hero-slide {
+        aspect-ratio:
+          4 / 5;
+
+        min-height:
+          520px;
+      }
+
+
+      /*
+        꽃다발이 오른쪽에 있기 때문에
+        모바일에서는 오른쪽 중심으로 보이게 설정
+      */
+
+      .hero-slide img {
+        object-position:
+          63% center;
+      }
+
+
+      .arrow {
+        width:
+          42px;
+
+        height:
+          42px;
+
+        font-size:
+          1.2rem;
+      }
+
+
+      .arrow-left {
+        left:
+          12px;
+      }
+
+
+      .arrow-right {
+        right:
+          12px;
+      }
+
+
+      .benefit-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .benefit {
+        border-right:
+          0;
+
+        border-bottom:
+          1px solid
+          var(--line);
+      }
+
+
+      .benefit:last-child {
+        border-bottom:
+          0;
+      }
+
 
       .section {
-        padding: 64px 0;
+        padding:
+          62px 0;
       }
 
-      .hero h1 {
-        font-size: 2.7rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-art {
-        min-height: 350px;
-      }
-
-      .bouquet-shape {
-        width: 100%;
-      }
-
-      .floating-note {
-        font-size: .9rem;
-        padding: 12px 14px;
-      }
-
-      .note-a {
-        left: 8px;
-        bottom: 18px;
-      }
-
-      .note-b {
-        right: 8px;
-        top: 28px;
-      }
-
-      .service-strip {
-        grid-template-columns: 1fr;
-      }
 
       .product-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 220px;
+        grid-template-columns:
+          1fr;
       }
 
-      .p1,.p2,.p3,.p4,.p5 {
-        grid-column: span 1;
+
+      .contact-actions {
+        flex-direction:
+          column;
       }
 
-      .about-art {
-        min-height: 310px;
+
+      .btn {
+        width:
+          100%;
       }
+
 
       .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
     }
+
   </style>
 </head>
 
+
+
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="#top" class="brand">
-      <span class="brand-mark">✿</span>
-      <span>골든블룸</span>
-    </a>
 
-    <nav class="nav-links" aria-label="주요 메뉴">
-      <a href="#products">상품</a>
-      <a href="#about">소개</a>
-      <a href="#contact">주문 안내</a>
-      <a href="#contact" class="nav-cta">💬 주문 문의</a>
-    </nav>
+  <!-- =====================================================
+       상단 안내
+  ====================================================== -->
 
-    <button class="menu-btn" aria-label="메뉴 열기">☰</button>
+  <div class="topbar">
+
+    <div class="container topbar-inner">
+
+      <div>
+        📍 용인 남사
+        &nbsp; | &nbsp;
+        꽃으로 전하는 특별한 마음,
+        골든블룸
+      </div>
+
+
+      <div class="top-links">
+
+        <a href="#">
+          로그인
+        </a>
+
+        <a href="#">
+          회원가입
+        </a>
+
+        <a href="#">
+          주문조회
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          Naver
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
-</header>
 
-<main id="top">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">✿ Yongin Flower Studio</span>
-        <h1>소중한 순간을<br><span>꽃으로 기억하게</span></h1>
-        <p>
-          용인에서 꽃다발과 꽃바구니를 정성껏 제작합니다.
-          졸업·입학·기념일·감사 선물부터 특별한 날을 위한 맞춤 꽃선물까지,
-          받는 분의 마음에 오래 남을 수 있도록 하나하나 준비합니다.
-        </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#products">💐 상품 보기</a>
-          <a class="btn btn-secondary" href="#contact">💬 주문 상담</a>
-        </div>
 
-        <div class="service-strip">
-          <div class="service-chip">
-            <strong>💐 꽃다발</strong>
-            <span>기념일과 선물에 어울리는 구성</span>
-          </div>
-          <div class="service-chip">
-            <strong>🧺 꽃바구니</strong>
-            <span>풍성하고 특별한 선물</span>
-          </div>
-          <div class="service-chip">
-            <strong>🎁 맞춤 제작</strong>
-            <span>색상·용도·예산에 맞춘 상담</span>
-          </div>
-        </div>
-      </div>
+  <!-- =====================================================
+       헤더
+  ====================================================== -->
 
-      <div class="hero-art">
-        <div class="bouquet-shape" role="img" aria-label="꽃다발을 표현한 장식 이미지"></div>
-        <div class="floating-note note-a">
-          🎀 특별한 날의 선물
-          <small>기념일 · 졸업 · 입학 · 감사</small>
-        </div>
-        <div class="floating-note note-b">
-          🌼 감성 맞춤 제작
-          <small>원하는 분위기와 컬러로</small>
-        </div>
-      </div>
+  <header>
+
+    <div class="container nav">
+
+
+      <!-- 로고 -->
+
+      <a href="#top" class="logo">
+
+        <span class="logo-en">
+          Golden Bloom
+        </span>
+
+        <span class="logo-ko">
+          골든블룸
+        </span>
+
+      </a>
+
+
+
+      <!-- 메뉴 -->
+
+      <nav class="nav-links">
+
+        <a href="#about">
+          브랜드소개
+        </a>
+
+        <a href="#collection">
+          상품안내
+        </a>
+
+        <a href="#collection">
+          제작사례
+        </a>
+
+        <a href="#contact">
+          이용안내
+        </a>
+
+        <a href="#contact">
+          고객센터
+        </a>
+
+      </nav>
+
+
+
+      <!--
+        ★ 수정할 부분
+
+        아래 href="#" 를
+
+        실제 카카오톡 채널 주소로
+        변경하세요.
+      -->
+
+      <a
+        href="#"
+        class="kakao-btn"
+        target="_blank"
+      >
+
+        💬 카카오톡 상담하기
+
+      </a>
+
+
+
+      <button
+        class="menu-btn"
+        aria-label="모바일 메뉴"
+      >
+        ☰
+      </button>
+
+
     </div>
-  </section>
 
-  <section class="section products" id="products">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Our Flower Collection</span>
-        <h2 class="section-title">골든블룸 대표 상품</h2>
-        <p class="section-copy">
-          실제 작품 사진을 넣으면 바로 포트폴리오형 홈페이지로 활용할 수 있도록
-          상품 영역을 이미지 중심의 CSS Grid로 구성했습니다.
-        </p>
+  </header>
+
+
+
+  <main id="top">
+
+
+
+    <!-- =====================================================
+         메인 슬라이드
+    ====================================================== -->
+
+    <section
+      class="hero"
+      aria-label="골든블룸 메인 이미지"
+    >
+
+
+      <div class="hero-slide">
+
+
+        <!--
+          ★★★★★★★★★★★★★★★★★★★★★
+
+          가장 중요한 메인 이미지 부분
+
+          첨부하신 이미지를
+
+          golden-bloom-main.png
+
+          이름으로 저장하고
+
+          index.html과 같은 폴더에
+          넣으면 됩니다.
+
+          ★★★★★★★★★★★★★★★★★★★★★
+        -->
+
+        <img
+          src="golden-bloom-main.png"
+          alt="소중한 순간을 꽃으로 기억하게 골든블룸 꽃다발"
+        >
+
+
+        <div class="hero-overlay">
+        </div>
+
+
+
+        <!-- 슬라이드 화살표 -->
+
+        <button
+          class="arrow arrow-left"
+          aria-label="이전 슬라이드"
+        >
+          ‹
+        </button>
+
+
+        <button
+          class="arrow arrow-right"
+          aria-label="다음 슬라이드"
+        >
+          ›
+        </button>
+
+
+
+        <!-- 슬라이드 점 -->
+
+        <div class="slider-dots">
+
+          <span class="active">
+          </span>
+
+          <span>
+          </span>
+
+          <span>
+          </span>
+
+          <span>
+          </span>
+
+        </div>
+
+
       </div>
 
-      <div class="product-grid">
-        <article class="product-card p1">
-          <div class="content">
-            <h3>감성 꽃다발</h3>
-            <p>기념일과 특별한 순간을 위한 대표 꽃다발</p>
-          </div>
-        </article>
+    </section>
 
-        <article class="product-card p2">
-          <div class="content">
-            <h3>꽃바구니</h3>
-            <p>풍성하고 고급스러운 선물용 구성</p>
-          </div>
-        </article>
 
-        <article class="product-card p3">
-          <div class="content">
-            <h3>비누꽃다발</h3>
-            <p>오래 간직할 수 있는 실용적인 꽃선물</p>
-          </div>
-        </article>
 
-        <article class="product-card p4">
-          <div class="content">
-            <h3>인형꽃다발</h3>
-            <p>졸업·입학 시즌 인기 선물</p>
-          </div>
-        </article>
+    <!-- =====================================================
+         골든블룸 특징
+    ====================================================== -->
 
-        <article class="product-card p5">
-          <div class="content">
-            <h3>맞춤 꽃선물</h3>
-            <p>컬러와 분위기를 상담해 제작하는 주문 상품</p>
+    <section class="benefits">
+
+      <div class="container benefit-grid">
+
+
+        <div class="benefit">
+
+          <div class="icon">
+            ♡
           </div>
-        </article>
+
+          <div>
+
+            <strong>
+              특별한 날을 더 특별하게
+            </strong>
+
+            <span>
+              생일, 기념일,
+              프로포즈,
+              졸업·입학식까지
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+          <div class="icon">
+            🎁
+          </div>
+
+          <div>
+
+            <strong>
+              맞춤 제작 가능
+            </strong>
+
+            <span>
+              원하는 스타일과
+              색감으로 정성스럽게
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+          <div class="icon">
+            🌷
+          </div>
+
+          <div>
+
+            <strong>
+              용인 남사 지역 꽃전문
+            </strong>
+
+            <span>
+              가까운 곳에서
+              편리하게 주문
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+          <div class="icon">
+            🚚
+          </div>
+
+          <div>
+
+            <strong>
+              안전한 수령 & 픽업
+            </strong>
+
+            <span>
+              예약 제작 ·
+              지역 수령 안내
+            </span>
+
+          </div>
+
+        </div>
+
+
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div class="about-art" role="img" aria-label="골든블룸 브랜드 이미지"></div>
+    </section>
 
-      <div>
-        <span class="eyebrow">About Golden Bloom</span>
-        <h2 class="section-title">예쁜 꽃보다<br>마음에 남는 꽃을 만듭니다</h2>
-        <p class="section-copy">
-          골든블룸은 용인에서 꽃다발과 꽃바구니를 제작합니다.
-          받는 분의 취향과 상황에 어울리는 색감과 구성을 고민해
-          선물하는 사람의 마음까지 자연스럽게 전달되는 꽃선물을 만들고 있습니다.
-        </p>
 
-        <div class="about-list">
-          <div class="about-item">
-            <div class="icon-box">🎨</div>
-            <div>
-              <strong>감각적인 색감</strong><br>
-              <span>부드럽고 따뜻한 컬러 조합으로 완성합니다.</span>
+
+    <!-- =====================================================
+         추천 상품
+    ====================================================== -->
+
+    <section
+      class="section collection"
+      id="collection"
+    >
+
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            OUR COLLECTION
+          </div>
+
+
+          <h2 class="section-title">
+            골든블룸 추천 상품
+          </h2>
+
+
+          <p class="section-copy">
+            소중한 마음을 전하는
+            다양한 꽃선물을 만나보세요.
+          </p>
+
+        </div>
+
+
+
+        <div class="product-grid">
+
+
+
+          <!-- 꽃다발 -->
+
+          <article class="product-card">
+
+            <div class="product-img">
             </div>
-          </div>
 
-          <div class="about-item">
-            <div class="icon-box">🎁</div>
-            <div>
-              <strong>용도별 맞춤 제작</strong><br>
-              <span>졸업, 입학, 기념일, 감사, 축하 등 상황에 맞게 구성합니다.</span>
-            </div>
-          </div>
+            <div class="product-body">
 
-          <div class="about-item">
-            <div class="icon-box">🤍</div>
-            <div>
-              <strong>정성스러운 제작</strong><br>
-              <span>한 작품씩 균형과 전체 분위기를 살펴가며 제작합니다.</span>
+              <h3>
+                꽃다발
+              </h3>
+
+              <small>
+                Bouquet
+              </small>
+
             </div>
-          </div>
+
+          </article>
+
+
+
+          <!-- 꽃바구니 -->
+
+          <article class="product-card">
+
+            <div class="product-img">
+            </div>
+
+            <div class="product-body">
+
+              <h3>
+                꽃바구니
+              </h3>
+
+              <small>
+                Flower Basket
+              </small>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 비누꽃 -->
+
+          <article class="product-card">
+
+            <div class="product-img">
+            </div>
+
+            <div class="product-body">
+
+              <h3>
+                비누꽃다발
+              </h3>
+
+              <small>
+                Soap Flower
+              </small>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 인형꽃다발 -->
+
+          <article class="product-card">
+
+            <div class="product-img">
+            </div>
+
+            <div class="product-body">
+
+              <h3>
+                인형꽃다발
+              </h3>
+
+              <small>
+                Toy Bouquet
+              </small>
+
+            </div>
+
+          </article>
+
+
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section contact" id="contact">
-    <div class="container contact-wrap">
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         브랜드 소개
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="about"
+    >
+
+
+      <div class="container about-grid">
+
+
+
+        <!-- 왼쪽 이미지 -->
+
+        <div class="about-img">
+
+          <img
+            src="golden-bloom-main.png"
+            alt="골든블룸 꽃다발"
+          >
+
+        </div>
+
+
+
+        <!-- 오른쪽 설명 -->
+
+        <div class="about-text">
+
+
+          <div class="eyebrow">
+            ABOUT GOLDEN BLOOM
+          </div>
+
+
+          <h2>
+            예쁜 꽃보다
+            <br>
+            마음에 남는 꽃을 만듭니다.
+          </h2>
+
+
+          <p>
+
+            골든블룸은 용인 남사에서
+
+            꽃다발과 꽃바구니,
+
+            비누꽃다발과 인형꽃다발을
+
+            제작합니다.
+
+            <br><br>
+
+            받는 분의 취향과
+
+            선물하는 순간에 어울리는
+
+            색감과 구성을 고민해
+
+            마음까지 자연스럽게 전달되는
+
+            꽃선물을 만들고 있습니다.
+
+          </p>
+
+
+
+          <div class="about-list">
+
+
+            <div class="about-item">
+
+              <div class="icon">
+                🎨
+              </div>
+
+              <div>
+
+                <strong>
+                  감각적인 색감
+                </strong>
+
+                <br>
+
+                <span>
+                  조화로운 컬러와
+                  분위기를 살린 구성
+                </span>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="about-item">
+
+              <div class="icon">
+                🎀
+              </div>
+
+              <div>
+
+                <strong>
+                  용도별 맞춤 제작
+                </strong>
+
+                <br>
+
+                <span>
+                  졸업·입학·기념일·감사·축하에
+                  맞는 꽃선물
+                </span>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="about-item">
+
+              <div class="icon">
+                🤍
+              </div>
+
+              <div>
+
+                <strong>
+                  정성스러운 제작
+                </strong>
+
+                <br>
+
+                <span>
+                  한 작품씩
+                  균형과 분위기를 살펴가며
+                  완성
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         주문 / 문의
+    ====================================================== -->
+
+    <section
+      class="section contact"
+      id="contact"
+    >
+
+
+      <div class="container contact-grid">
+
+
+
+        <div>
+
+
+          <div
+            class="eyebrow"
+            style="color:#efd48d;"
+          >
+            ORDER & CONTACT
+          </div>
+
+
+          <h2>
+
+            원하는 분위기를
+            알려주세요.
+
+            <br>
+
+            꽃으로 만들어드립니다.
+
+          </h2>
+
+
+
+          <p>
+
+            사용 목적,
+
+            원하는 색상,
+
+            예산,
+
+            수령 날짜를 알려주시면
+
+            어울리는 구성으로
+
+            상담해드립니다.
+
+          </p>
+
+
+
+          <div class="contact-actions">
+
+
+            <!--
+              ★ 카카오톡 주소 변경
+            -->
+
+            <a
+              href="#"
+              class="btn btn-primary"
+              target="_blank"
+            >
+
+              💬 카카오톡 상담
+
+            </a>
+
+
+
+            <!--
+              ★ 인스타그램 주소 변경
+            -->
+
+            <a
+              href="#"
+              class="btn btn-light"
+              target="_blank"
+            >
+
+              📷 인스타그램 보기
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- 주문정보 -->
+
+        <div class="contact-card">
+
+
+          <div class="contact-row">
+
+            <strong>
+              제작 품목
+            </strong>
+
+            <span>
+              꽃다발 · 꽃바구니
+            </span>
+
+          </div>
+
+
+
+          <div class="contact-row">
+
+            <strong>
+              기타 상품
+            </strong>
+
+            <span>
+              비누꽃 · 인형꽃
+            </span>
+
+          </div>
+
+
+
+          <div class="contact-row">
+
+            <strong>
+              주문 방식
+            </strong>
+
+            <span>
+              예약 · 맞춤 제작
+            </span>
+
+          </div>
+
+
+
+          <div class="contact-row">
+
+            <strong>
+              지역
+            </strong>
+
+            <span>
+              경기 용인 남사
+            </span>
+
+          </div>
+
+
+
+          <!--
+             ★ 전화번호 수정
+          -->
+
+          <div class="contact-row">
+
+            <strong>
+              문의
+            </strong>
+
+            <span>
+              010-0000-0000
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       푸터
+  ====================================================== -->
+
+  <footer>
+
+
+    <div class="container footer-grid">
+
+
       <div>
-        <span class="eyebrow" style="color:#f4d98f;">Order & Contact</span>
-        <h2 class="section-title">원하는 분위기를 알려주세요.<br>꽃으로 만들어드립니다.</h2>
-        <p class="section-copy">
-          사용 목적, 원하는 색상, 예산, 수령 날짜를 알려주시면
-          가장 어울리는 구성으로 상담할 수 있습니다.
-        </p>
 
-        <div class="hero-actions" style="margin-top:28px;">
-          <a class="btn btn-primary" href="#">💬 카카오톡 상담</a>
-          <a class="btn btn-secondary" href="#">📷 인스타그램 보기</a>
+        <div class="footer-brand">
+          Golden Bloom · 골든블룸
         </div>
+
+
+        <div>
+          용인 남사 꽃다발 · 꽃바구니 ·
+          비누꽃 · 인형꽃 제작
+        </div>
+
       </div>
 
-      <div class="contact-card">
-        <div><strong>제작 품목</strong><span>꽃다발 · 꽃바구니</span></div>
-        <div><strong>주문 방식</strong><span>예약 · 맞춤 제작</span></div>
-        <div><strong>지역</strong><span>경기 용인</span></div>
-        <div><strong>문의</strong><span>연락처 입력</span></div>
+
+      <div>
+        © 2026 Golden Bloom.
+        All Rights Reserved.
       </div>
+
+
     </div>
-  </section>
-</main>
 
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">GOLDEN BLOOM · 골든블룸</div>
-      <p class="small">용인 꽃다발 · 꽃바구니 · 비누꽃 · 인형꽃 제작</p>
-    </div>
-    <div class="small">© 2026 Golden Bloom. All Rights Reserved.</div>
-  </div>
-</footer>
 
-<script>
-  const menuBtn = document.querySelector('.menu-btn');
-  const navLinks = document.querySelector('.nav-links');
+  </footer>
 
-  menuBtn.addEventListener('click', () => {
-    const open = navLinks.style.display === 'flex';
-    navLinks.style.display = open ? 'none' : 'flex';
 
-    if (!open) {
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '72px';
-      navLinks.style.left = '16px';
-      navLinks.style.right = '16px';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.alignItems = 'stretch';
-      navLinks.style.padding = '18px';
-      navLinks.style.borderRadius = '18px';
-      navLinks.style.background = 'rgba(255,250,243,.98)';
-      navLinks.style.boxShadow = '0 18px 36px rgba(80,55,40,.16)';
-    }
-  });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 980) {
-      navLinks.removeAttribute('style');
-    }
-  });
-</script>
+  <!-- =====================================================
+       자바스크립트
+  ====================================================== -->
+
+  <script>
+
+    /*
+      모바일 메뉴 열기
+    */
+
+    const menuBtn =
+      document.querySelector(
+        ".menu-btn"
+      );
+
+
+    const navLinks =
+      document.querySelector(
+        ".nav-links"
+      );
+
+
+    menuBtn.addEventListener(
+      "click",
+      function () {
+
+
+        const isOpen =
+          navLinks.classList.contains(
+            "mobile-open"
+          );
+
+
+        if (isOpen) {
+
+          navLinks.classList.remove(
+            "mobile-open"
+          );
+
+          navLinks.removeAttribute(
+            "style"
+          );
+
+          return;
+
+        }
+
+
+        navLinks.classList.add(
+          "mobile-open"
+        );
+
+
+        Object.assign(
+          navLinks.style,
+          {
+
+            display: "flex",
+
+            position: "absolute",
+
+            top: "68px",
+
+            left: "12px",
+
+            right: "12px",
+
+            flexDirection:
+              "column",
+
+            alignItems:
+              "stretch",
+
+            gap:
+              "0",
+
+            padding:
+              "12px 18px",
+
+            background:
+              "#ffffff",
+
+            borderRadius:
+              "14px",
+
+            boxShadow:
+              "0 18px 36px rgba(75,50,40,.16)"
+
+          }
+        );
+
+
+        navLinks
+          .querySelectorAll("a")
+          .forEach(
+            function (link) {
+
+              link.style.padding =
+                "12px 0";
+
+            }
+          );
+
+
+      }
+    );
+
+
+
+    /*
+      PC 사이즈로 돌아오면
+      모바일 메뉴 스타일 초기화
+    */
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+
+        if (
+          window.innerWidth > 980
+        ) {
+
+          navLinks.classList.remove(
+            "mobile-open"
+          );
+
+          navLinks.removeAttribute(
+            "style"
+          );
+
+
+          navLinks
+            .querySelectorAll("a")
+            .forEach(
+              function (link) {
+
+                link.removeAttribute(
+                  "style"
+                );
+
+              }
+            );
+
+        }
+
+
+      }
+    );
+
+
+  </script>
+
 
 </body>
 </html>
