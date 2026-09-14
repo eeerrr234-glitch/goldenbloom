@@ -1,1853 +1,1515 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+  <meta
+    name="description"
+    content="용인  꽃다발·꽃바구니 제작 골든블룸. 비누꽃다발, 인형꽃다발, 졸업식·입학식·기념일 꽃선물을 정성껏 제작합니다."
+  >
 
-<meta
-  name="description"
-  content="용인 꽃다발·꽃바구니 제작 골든블룸. 비누꽃다발, 인형꽃다발, 졸업식 꽃다발, 입학식 꽃다발, 기념일 꽃선물을 정성껏 제작합니다."
->
+  <meta
+    name="keywords"
+    content="용인 꽃다발, 용인 꽃바구니,  비누꽃다발, 인형꽃다발, 졸업식 꽃다발, 입학식 꽃다발, 골든블룸"
+  >
 
-<meta
-  name="keywords"
-  content="용인 꽃다발, 용인 꽃바구니, 비누꽃다발, 인형꽃다발, 졸업식 꽃다발, 입학식 꽃다발, 골든블룸"
->
+  <title>
+    골든블룸 | 용인 꽃다발 · 꽃바구니
+  </title>
 
-<title>
-골든블룸 | 용인 남사 꽃다발 · 꽃바구니
-</title>
 
+  <style>
 
-<style>
+    /* ===========================
+       기본 컬러
+    =========================== */
 
-/* ==================================================
-   GOLDEN BLOOM
-   기본 컬러
-================================================== */
+    :root {
 
-:root {
+      --cream: #fffaf6;
+      --white: #ffffff;
 
-  --cream: #fffaf6;
+      --text: #3c2924;
+      --sub: #806d64;
 
-  --white: #ffffff;
+      --gold: #a87b2b;
+      --gold-light: #d6aa55;
 
-  --text: #382722;
+      --pink: #d97990;
+      --pink-light: #eba9b7;
 
-  --sub-text: #806d64;
+      --line: #eadfd9;
 
-  --gold: #aa7d2b;
+      --dark-brown: #34241f;
 
-  --gold-light: #d5aa54;
+      --shadow:
+        0 16px 38px
+        rgba(70, 48, 38, 0.12);
 
-  --pink: #dc7c91;
+      --radius: 22px;
+    }
 
-  --pink-light: #eba6b5;
 
-  --light-pink: #fcecef;
+    /* ===========================
+       기본 설정
+    =========================== */
 
-  --line: #eadfd9;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  --brown: #684f44;
 
-  --shadow:
-    0 15px 38px
-    rgba(73, 48, 38, 0.11);
+    html {
+      scroll-behavior: smooth;
+    }
 
-}
 
+    body {
 
-/* ==================================================
-   기본 초기화
-================================================== */
+      font-family:
+        "Pretendard",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
 
-* {
+      color: var(--text);
 
-  margin: 0;
+      background: var(--cream);
 
-  padding: 0;
+      line-height: 1.65;
+    }
 
-  box-sizing: border-box;
 
-}
+    img {
+      display: block;
+      width: 100%;
+    }
 
 
-html {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  scroll-behavior: smooth;
 
-}
+    button {
+      font: inherit;
+    }
 
 
-body {
+    .container {
 
-  font-family:
-    "Pretendard",
-    "Noto Sans KR",
-    Arial,
-    sans-serif;
+      width:
+        min(
+          1200px,
+          calc(100% - 40px)
+        );
 
-  background:
-    var(--cream);
+      margin: 0 auto;
+    }
 
-  color:
-    var(--text);
 
-  line-height:
-    1.6;
 
-}
+    /* ===========================
+       상단 안내바
+    =========================== */
 
+    .topbar {
 
-a {
+      background: #f8f1eb;
 
-  text-decoration: none;
+      border-bottom:
+        1px solid
+        rgba(80, 50, 40, 0.06);
+    }
 
-  color: inherit;
 
-}
+    .topbar-inner {
 
+      min-height: 36px;
 
-img {
+      display: flex;
 
-  display: block;
+      align-items: center;
 
-  width: 100%;
+      justify-content: space-between;
 
-}
+      gap: 20px;
 
+      font-size: 13px;
 
-button {
+      color: #72645d;
+    }
 
-  font-family: inherit;
 
-}
+    .topbar-links {
 
+      display: flex;
 
-.container {
+      gap: 18px;
+    }
 
-  width:
-    min(
-      1200px,
-      calc(100% - 40px)
-    );
 
-  margin:
-    0 auto;
 
-}
+    /* ===========================
+       HEADER
+    =========================== */
 
+    header {
 
+      position: sticky;
 
-/* ==================================================
-   상단 안내 영역
-================================================== */
+      top: 0;
 
-.top-bar {
+      z-index: 1000;
 
-  background:
-    #f8f1eb;
+      background:
+        rgba(255,255,255,0.96);
 
-  border-bottom:
-    1px solid
-    rgba(80, 50, 40, 0.06);
+      backdrop-filter:
+        blur(14px);
 
-}
+      border-bottom:
+        1px solid
+        rgba(80,50,40,0.07);
+    }
 
 
-.top-bar-inner {
+    .navbar {
 
-  min-height:
-    34px;
+      min-height: 92px;
 
-  display:
-    flex;
+      display: grid;
 
-  justify-content:
-    space-between;
+      grid-template-columns:
+        240px 1fr auto;
 
-  align-items:
-    center;
+      gap: 28px;
 
-  gap:
-    20px;
+      align-items: center;
+    }
 
-  font-size:
-    13px;
 
-  color:
-    #6f625c;
 
-}
+    /* ===========================
+       로고
+    =========================== */
 
+    .logo {
 
-.top-right {
+      display: inline-flex;
 
-  display:
-    flex;
+      flex-direction: column;
 
-  align-items:
-    center;
+      line-height: 1;
+    }
 
-  gap:
-    14px;
 
-}
+    .logo-main {
 
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
+      font-style: italic;
 
-/* ==================================================
-   헤더
-================================================== */
+      font-size: 31px;
 
-header {
+      color: var(--gold);
+    }
 
-  position:
-    sticky;
 
-  top:
-    0;
+    .logo-sub {
 
-  z-index:
-    1000;
+      margin-top: 7px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.96
-    );
+      margin-left: 59px;
 
-  backdrop-filter:
-    blur(12px);
+      font-size: 11px;
 
-  border-bottom:
-    1px solid
-    rgba(
-      80,
-      50,
-      40,
-      0.07
-    );
+      font-weight: 700;
 
-}
+      letter-spacing: 0.26em;
 
+      color: #a57c2e;
+    }
 
-.nav {
 
-  min-height:
-    94px;
 
-  display:
-    grid;
+    /* ===========================
+       PC 메뉴
+    =========================== */
 
-  grid-template-columns:
-    230px
-    1fr
-    auto;
+    .nav-menu {
 
-  align-items:
-    center;
+      display: flex;
 
-  gap:
-    30px;
+      justify-content: center;
 
-}
+      gap: 38px;
 
+      font-size: 15px;
 
+      font-weight: 700;
+    }
 
-/* ==================================================
-   로고
-================================================== */
 
-.logo {
+    .nav-menu a {
 
-  display:
-    inline-flex;
+      position: relative;
 
-  flex-direction:
-    column;
+      padding: 12px 0;
+    }
 
-  align-items:
-    flex-start;
 
-  line-height:
-    1;
+    .nav-menu a::after {
 
-}
+      content: "";
 
+      position: absolute;
 
-.logo-main {
+      bottom: 3px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+      left: 50%;
 
-  font-style:
-    italic;
+      width: 0;
 
-  font-size:
-    32px;
+      height: 2px;
 
-  color:
-    var(--gold);
+      transform:
+        translateX(-50%);
 
-}
+      transition:
+        width 0.25s;
 
+      background:
+        linear-gradient(
+          90deg,
+          var(--pink),
+          var(--gold)
+        );
+    }
 
-.logo-sub {
 
-  margin-top:
-    7px;
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
 
-  margin-left:
-    64px;
 
-  font-size:
-    11px;
 
-  font-weight:
-    700;
+    /* ===========================
+       상담 버튼
+    =========================== */
 
-  letter-spacing:
-    0.25em;
+    .header-contact {
 
-  color:
-    #a47c31;
+      display: inline-flex;
 
-}
+      align-items: center;
 
+      justify-content: center;
 
+      gap: 8px;
 
-/* ==================================================
-   메인 네비게이션
-================================================== */
+      padding: 13px 21px;
 
-.nav-menu {
+      border-radius: 999px;
 
-  display:
-    flex;
+      font-size: 14px;
 
-  justify-content:
-    center;
+      font-weight: 800;
 
-  align-items:
-    center;
+      color: #ffffff;
 
-  gap:
-    42px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--pink-light)
+        );
 
-  font-weight:
-    700;
+      box-shadow:
+        0 10px 24px
+        rgba(217,121,144,0.24);
 
-  font-size:
-    16px;
+      transition: 0.25s;
+    }
 
-}
 
+    .header-contact:hover {
+      transform: translateY(-2px);
+    }
 
-.nav-menu a {
 
-  position:
-    relative;
 
-  padding:
-    10px 0;
+    /* ===========================
+       모바일 메뉴 버튼
+    =========================== */
 
-}
+    .mobile-menu-button {
 
+      display: none;
 
-.nav-menu a::after {
+      width: 44px;
 
-  content:
-    "";
+      height: 44px;
 
-  position:
-    absolute;
+      border: 0;
 
-  left:
-    50%;
+      background: transparent;
 
-  bottom:
-    3px;
+      font-size: 27px;
 
-  width:
-    0;
+      cursor: pointer;
+    }
 
-  height:
-    2px;
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--pink),
-      var(--gold)
-    );
 
-  transform:
-    translateX(-50%);
+    /* ===========================
+       메인 슬라이드
+    =========================== */
 
-  transition:
-    0.25s;
+    .hero {
 
-}
+      position: relative;
 
+      overflow: hidden;
 
-.nav-menu a:hover::after {
+      background: #efe8e2;
+    }
 
-  width:
-    100%;
 
-}
+    .hero-slide {
 
+      position: relative;
 
+      width: 100%;
 
-/* ==================================================
-   카카오톡 상담 버튼
-================================================== */
+      aspect-ratio: 16 / 9;
 
-.kakao-button {
+      max-height: 720px;
 
-  display:
-    inline-flex;
+      min-height: 420px;
 
-  align-items:
-    center;
+      overflow: hidden;
+    }
 
-  justify-content:
-    center;
 
-  gap:
-    8px;
+    .hero-slide img {
 
-  padding:
-    14px 23px;
+      width: 100%;
 
-  border-radius:
-    999px;
+      height: 100%;
 
-  color:
-    #ffffff;
+      object-fit: cover;
 
-  font-size:
-    14px;
+      object-position: center;
+    }
 
-  font-weight:
-    800;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--pink),
-      var(--pink-light)
-    );
+    /*
+       첨부 이미지 안에 이미
+       "소중한 순간을 꽃으로 기억하게"
+       문구가 있기 때문에
+       별도의 텍스트를 덧씌우지 않습니다.
+    */
 
-  box-shadow:
-    0 9px 22px
-    rgba(
-      220,
-      124,
-      145,
-      0.24
-    );
 
-  transition:
-    0.25s;
+    .hero-overlay {
 
-}
+      position: absolute;
 
+      inset: 0;
 
-.kakao-button:hover {
+      pointer-events: none;
 
-  transform:
-    translateY(-2px);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.03),
+          transparent 55%,
+          rgba(60,40,30,0.03)
+        );
+    }
 
-}
 
 
+    /* ===========================
+       특징
+    =========================== */
 
-/* 모바일 메뉴 버튼 */
+    .features {
 
-.mobile-menu-button {
+      background: #ffffff;
 
-  display:
-    none;
+      border-bottom:
+        1px solid var(--line);
+    }
 
-  background:
-    none;
 
-  border:
-    0;
+    .feature-grid {
 
-  font-size:
-    28px;
+      display: grid;
 
-  cursor:
-    pointer;
+      grid-template-columns:
+        repeat(4, 1fr);
+    }
 
-}
 
+    .feature {
 
+      min-height: 105px;
 
-/* ==================================================
-   메인 슬라이드
-================================================== */
+      padding: 22px 20px;
 
-.hero {
+      display: grid;
 
-  position:
-    relative;
+      grid-template-columns:
+        54px 1fr;
 
-  background:
-    #eee6df;
+      align-items: center;
 
-  overflow:
-    hidden;
+      gap: 15px;
 
-}
+      border-right:
+        1px solid var(--line);
+    }
 
 
-.hero-slide {
+    .feature:last-child {
+      border-right: 0;
+    }
 
-  position:
-    relative;
 
-  width:
-    100%;
+    .feature-icon {
 
-  aspect-ratio:
-    16 / 9;
+      width: 52px;
 
-  max-height:
-    720px;
+      height: 52px;
 
-  min-height:
-    430px;
+      display: grid;
 
-}
+      place-items: center;
 
+      border-radius: 50%;
 
-/* ================================================
-   ★ 메인 이미지
-   golden-bloom-main.png
+      font-size: 22px;
 
-   index.html과 같은 폴더에 넣으세요.
-================================================ */
+      background:
+        linear-gradient(
+          135deg,
+          #fdecef,
+          #f7d5dc
+        );
+    }
 
-.hero-slide img {
 
-  width:
-    100%;
+    .feature strong {
 
-  height:
-    100%;
+      display: block;
 
-  object-fit:
-    cover;
+      margin-bottom: 3px;
 
-  object-position:
-    center;
+      font-size: 15px;
+    }
 
-}
 
+    .feature p {
 
+      color: #88756d;
 
-/* 아주 약한 오버레이 */
+      font-size: 13px;
+    }
 
-.hero-overlay {
 
-  position:
-    absolute;
 
-  inset:
-    0;
+    /* ===========================
+       공통 SECTION
+    =========================== */
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0),
-      rgba(50,30,20,0.03)
-    );
+    .section {
 
-  pointer-events:
-    none;
+      padding: 88px 0;
+    }
 
-}
 
+    .section-header {
 
+      margin-bottom: 40px;
 
-/* ==================================================
-   서비스 특징
-================================================== */
+      text-align: center;
+    }
 
-.features {
 
-  background:
-    #ffffff;
+    .section-label {
 
-  border-bottom:
-    1px solid
-    var(--line);
+      margin-bottom: 6px;
 
-}
+      color: #ad876d;
 
+      font-family:
+        Georgia,
+        serif;
 
-.feature-grid {
+      font-size: 13px;
 
-  display:
-    grid;
+      letter-spacing: 0.22em;
+    }
 
-  grid-template-columns:
-    repeat(
-      4,
-      1fr
-    );
 
-}
+    .section-title {
 
+      margin-bottom: 10px;
 
-.feature {
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          46px
+        );
 
-  display:
-    grid;
+      line-height: 1.15;
+    }
 
-  grid-template-columns:
-    56px
-    1fr;
 
-  align-items:
-    center;
+    .section-description {
 
-  gap:
-    15px;
+      color: var(--sub);
 
-  padding:
-    25px 20px;
+      font-size: 15px;
+    }
 
-  border-right:
-    1px solid
-    var(--line);
 
-}
 
+    /* ===========================
+       상품 COLLECTION
+    =========================== */
 
-.feature:last-child {
+    .collection {
 
-  border-right:
-    none;
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #fffaf6
+        );
+    }
 
-}
 
+    .product-grid {
 
-.feature-icon {
+      display: grid;
 
-  width:
-    54px;
+      grid-template-columns:
+        repeat(4,1fr);
 
-  height:
-    54px;
+      gap: 20px;
+    }
 
-  border-radius:
-    50%;
 
-  display:
-    grid;
+    .product-card {
 
-  place-items:
-    center;
+      overflow: hidden;
 
-  font-size:
-    23px;
+      border-radius:
+        var(--radius);
 
-  color:
-    #c55e75;
+      background: #ffffff;
 
-  background:
-    linear-gradient(
-      135deg,
-      #fdecef,
-      #f8d9df
-    );
+      border:
+        1px solid
+        rgba(90,70,60,0.07);
 
-}
+      box-shadow:
+        var(--shadow);
 
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+    }
 
-.feature strong {
 
-  display:
-    block;
+    .product-card:hover {
 
-  margin-bottom:
-    3px;
+      transform:
+        translateY(-7px);
 
-  font-size:
-    15px;
+      box-shadow:
+        0 20px 45px
+        rgba(70,48,38,0.16);
+    }
 
-}
 
+    .product-image {
 
-.feature span {
+      height: 280px;
 
-  display:
-    block;
+      overflow: hidden;
+    }
 
-  color:
-    #88766e;
 
-  font-size:
-    13px;
+    .product-image img {
 
-}
+      width: 100%;
 
+      height: 100%;
 
+      object-fit: cover;
 
-/* ==================================================
-   공통 섹션
-================================================== */
+      transition:
+        transform 0.45s;
+    }
 
-.section {
 
-  padding:
-    90px 0;
+    .product-card:hover
+    .product-image img {
 
-}
+      transform:
+        scale(1.06);
+    }
 
 
-.section-header {
 
-  text-align:
-    center;
+    /*
+       같은 메인 이미지를
+       상품별로 서로 다르게 크롭해서
+       사용하는 방식입니다.
+    */
 
-  margin-bottom:
-    42px;
 
-}
+    .product-card:nth-child(1)
+    .product-image img {
 
+      object-position:
+        62% center;
+    }
 
-.section-label {
 
-  margin-bottom:
-    6px;
+    .product-card:nth-child(2)
+    .product-image img {
 
-  color:
-    #ac886e;
+      object-position:
+        78% center;
+    }
 
-  font-family:
-    Georgia,
-    serif;
 
-  font-size:
-    13px;
+    .product-card:nth-child(3)
+    .product-image img {
 
-  letter-spacing:
-    0.23em;
+      object-position:
+        45% center;
+    }
 
-}
 
+    .product-card:nth-child(4)
+    .product-image img {
 
-.section-title {
+      object-position:
+        68% center;
+    }
 
-  margin-bottom:
-    10px;
 
-  font-size:
-    clamp(
-      32px,
-      4vw,
-      46px
-    );
+    .product-info {
 
-  line-height:
-    1.2;
+      padding:
+        20px 19px 22px;
+    }
 
-}
 
+    .product-info h3 {
 
-.section-description {
+      margin-bottom: 3px;
 
-  color:
-    var(--sub-text);
+      font-size: 19px;
+    }
 
-  font-size:
-    15px;
 
-}
+    .product-info p {
 
+      margin-bottom: 9px;
 
+      color: #8f7d74;
 
-/* ==================================================
-   상품 영역
-================================================== */
+      font-size: 13px;
+    }
 
-.collection {
 
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff,
-      #fffaf6
-    );
+    .product-info span {
 
-}
+      font-family:
+        Georgia,
+        serif;
 
+      color: var(--gold);
 
-.product-grid {
+      font-size: 13px;
+    }
 
-  display:
-    grid;
 
-  grid-template-columns:
-    repeat(
-      4,
-      1fr
-    );
 
-  gap:
-    20px;
+    /* ===========================
+       ABOUT
+    =========================== */
 
-}
+    .about {
 
+      background:
+        #fffdf9;
+    }
 
-.product-card {
 
-  overflow:
-    hidden;
+    .about-grid {
 
-  border-radius:
-    20px;
+      display: grid;
 
-  background:
-    #ffffff;
+      grid-template-columns:
+        1fr 1fr;
 
-  border:
-    1px solid
-    rgba(
-      100,
-      70,
-      60,
-      0.07
-    );
+      align-items: center;
 
-  box-shadow:
-    var(--shadow);
+      gap: 58px;
+    }
 
-  transition:
-    0.3s;
 
-}
+    .about-image {
 
+      overflow: hidden;
 
-.product-card:hover {
+      border-radius: 28px;
 
-  transform:
-    translateY(-8px);
+      box-shadow:
+        var(--shadow);
 
-}
+      aspect-ratio:
+        4 / 3;
+    }
 
 
-.product-image {
+    .about-image img {
 
-  height:
-    250px;
+      width: 100%;
 
-  overflow:
-    hidden;
+      height: 100%;
 
-  position:
-    relative;
+      object-fit: cover;
 
-}
+      object-position:
+        67% center;
+    }
 
 
+    .about-label {
 
-/* 꽃다발 */
+      margin-bottom: 9px;
 
-.product-one {
+      color: #ad876d;
 
-  background:
+      font-size: 13px;
 
-    radial-gradient(
-      circle at 30% 38%,
-      #efb7bf 0 11%,
-      transparent 12%
-    ),
+      letter-spacing: 0.21em;
+    }
 
-    radial-gradient(
-      circle at 53% 36%,
-      #f6d8a3 0 12%,
-      transparent 13%
-    ),
 
-    radial-gradient(
-      circle at 70% 48%,
-      #d2dfbc 0 11%,
-      transparent 12%
-    ),
+    .about-content h2 {
 
-    linear-gradient(
-      135deg,
-      #ebd3c8,
-      #f7e7c4
-    );
+      margin-bottom: 20px;
 
-}
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          46px
+        );
 
+      line-height: 1.25;
+    }
 
-/* 꽃바구니 */
 
-.product-two {
+    .about-content > p {
 
-  background:
+      margin-bottom: 28px;
 
-    radial-gradient(
-      circle at 30% 38%,
-      #f4b9c4 0 11%,
-      transparent 12%
-    ),
+      color: var(--sub);
+    }
 
-    radial-gradient(
-      circle at 55% 37%,
-      #f6e1a9 0 12%,
-      transparent 13%
-    ),
 
-    radial-gradient(
-      circle at 68% 53%,
-      #d7e3c1 0 12%,
-      transparent 13%
-    ),
+    .about-list {
 
-    linear-gradient(
-      135deg,
-      #cba77e,
-      #efd7b3
-    );
+      display: grid;
 
-}
+      gap: 17px;
+    }
 
 
-/* 비누꽃 */
+    .about-item {
 
-.product-three {
+      display: grid;
 
-  background:
+      grid-template-columns:
+        47px 1fr;
 
-    radial-gradient(
-      circle at 34% 39%,
-      #f1c1cb 0 13%,
-      transparent 14%
-    ),
+      gap: 14px;
 
-    radial-gradient(
-      circle at 62% 43%,
-      #f7e4b3 0 13%,
-      transparent 14%
-    ),
+      align-items: start;
+    }
 
-    linear-gradient(
-      135deg,
-      #ead0c6,
-      #f6dfca
-    );
 
-}
+    .about-icon {
 
+      width: 46px;
 
-/* 인형꽃 */
+      height: 46px;
 
-.product-four {
+      display: grid;
 
-  background:
+      place-items: center;
 
-    radial-gradient(
-      circle at 30% 39%,
-      #f0bec7 0 11%,
-      transparent 12%
-    ),
+      border-radius: 15px;
 
-    radial-gradient(
-      circle at 67% 44%,
-      #faeabf 0 12%,
-      transparent 13%
-    ),
+      background:
+        linear-gradient(
+          135deg,
+          #fce8eb,
+          #f3cdd5
+        );
+    }
 
-    radial-gradient(
-      circle at 53% 58%,
-      #cba981 0 15%,
-      transparent 16%
-    ),
 
-    linear-gradient(
-      135deg,
-      #ead2c5,
-      #f8e6c0
-    );
+    .about-item p {
 
-}
+      margin-top: 3px;
 
+      color: #89776e;
 
-.product-info {
+      font-size: 14px;
+    }
 
-  padding:
-    20px;
 
-}
 
+    /* ===========================
+       주문 방법
+    =========================== */
 
-.product-info h3 {
+    .order-guide {
 
-  margin-bottom:
-    3px;
+      background:
+        #ffffff;
+    }
 
-  font-size:
-    19px;
 
-}
+    .order-grid {
 
+      display: grid;
 
-.product-info small {
+      grid-template-columns:
+        repeat(4,1fr);
 
-  color:
-    #9c8980;
+      gap: 20px;
+    }
 
-}
 
+    .order-item {
 
+      padding: 28px 22px;
 
-/* ==================================================
-   브랜드 소개
-================================================== */
+      text-align: center;
 
-.about {
+      border-radius: 20px;
 
-  background:
-    #fffdf9;
+      background:
+        #fffaf7;
 
-}
+      border:
+        1px solid var(--line);
+    }
 
 
-.about-grid {
+    .order-number {
 
-  display:
-    grid;
+      width: 42px;
 
-  grid-template-columns:
-    1fr
-    1fr;
+      height: 42px;
 
-  gap:
-    60px;
+      margin:
+        0 auto 15px;
 
-  align-items:
-    center;
+      display: grid;
 
-}
+      place-items: center;
 
+      border-radius: 50%;
 
-.about-image {
+      color: #ffffff;
 
-  border-radius:
-    26px;
+      font-weight: 800;
 
-  overflow:
-    hidden;
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--gold-light)
+        );
+    }
 
-  box-shadow:
-    var(--shadow);
 
-}
+    .order-item h3 {
 
+      margin-bottom: 7px;
 
-.about-image img {
+      font-size: 17px;
+    }
 
-  aspect-ratio:
-    4 / 3;
 
-  object-fit:
-    cover;
+    .order-item p {
 
-  object-position:
-    65% center;
+      color: var(--sub);
 
-}
+      font-size: 14px;
+    }
 
 
-.about-label {
 
-  color:
-    #ad876d;
+    /* ===========================
+       CONTACT
+    =========================== */
 
-  font-size:
-    13px;
+    .contact {
 
-  letter-spacing:
-    0.20em;
+      color: #ffffff;
 
-  margin-bottom:
-    10px;
+      background:
+        linear-gradient(
+          135deg,
+          #654c42,
+          #87685a 55%,
+          #a47b68
+        );
+    }
 
-}
 
+    .contact-grid {
 
-.about-content h2 {
+      display: grid;
 
-  margin-bottom:
-    22px;
+      grid-template-columns:
+        1.1fr 0.9fr;
 
-  font-size:
-    clamp(
-      32px,
-      4vw,
-      46px
-    );
+      gap: 55px;
 
-  line-height:
-    1.25;
+      align-items: center;
+    }
 
-}
 
+    .contact-label {
 
-.about-content > p {
+      margin-bottom: 10px;
 
-  margin-bottom:
-    28px;
+      color: #f3d88f;
 
-  color:
-    var(--sub-text);
+      font-family:
+        Georgia,
+        serif;
 
-}
+      letter-spacing: 0.20em;
+    }
 
 
-.about-list {
+    .contact h2 {
 
-  display:
-    grid;
+      margin-bottom: 18px;
 
-  gap:
-    17px;
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          48px
+        );
 
-}
+      line-height: 1.25;
+    }
 
 
-.about-item {
+    .contact-description {
 
-  display:
-    grid;
+      margin-bottom: 27px;
 
-  grid-template-columns:
-    48px
-    1fr;
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.8
+        );
+    }
 
-  gap:
-    14px;
 
-  align-items:
-    start;
+    .contact-buttons {
 
-}
+      display: flex;
 
+      flex-wrap: wrap;
 
-.about-icon {
+      gap: 12px;
+    }
 
-  width:
-    46px;
 
-  height:
-    46px;
+    .button {
 
-  border-radius:
-    15px;
+      display: inline-flex;
 
-  display:
-    grid;
+      align-items: center;
 
-  place-items:
-    center;
+      justify-content: center;
 
-  background:
-    linear-gradient(
-      135deg,
-      #fbe6ea,
-      #f4cdd5
-    );
+      gap: 8px;
 
-}
+      padding:
+        14px 21px;
 
+      border-radius:
+        14px;
 
+      font-weight: 800;
 
-/* ==================================================
-   주문 상담
-================================================== */
+      transition: 0.25s;
+    }
 
-.contact {
 
-  color:
-    #ffffff;
+    .button:hover {
 
-  background:
-    linear-gradient(
-      135deg,
-      #674f45,
-      #88695b 55%,
-      #9e7664
-    );
+      transform:
+        translateY(-3px);
+    }
 
-}
 
+    .button-kakao {
 
-.contact-grid {
+      color: #ffffff;
 
-  display:
-    grid;
+      background:
+        linear-gradient(
+          135deg,
+          #d89a4a,
+          #e8be74
+        );
+    }
 
-  grid-template-columns:
-    1.1fr
-    0.9fr;
 
-  gap:
-    50px;
+    .button-instagram {
 
-  align-items:
-    center;
+      color: #594138;
 
-}
+      background: #ffffff;
+    }
 
 
-.contact-label {
+    .contact-card {
 
-  margin-bottom:
-    10px;
+      padding: 30px;
 
-  font-family:
-    Georgia,
-    serif;
+      border-radius: 24px;
 
-  letter-spacing:
-    0.20em;
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.10
+        );
 
-  color:
-    #f2d78e;
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.18
+        );
 
-}
+      backdrop-filter:
+        blur(8px);
+    }
 
 
-.contact h2 {
+    .contact-row {
 
-  margin-bottom:
-    18px;
+      display: flex;
 
-  font-size:
-    clamp(
-      32px,
-      4vw,
-      48px
-    );
+      justify-content:
+        space-between;
 
-  line-height:
-    1.25;
+      gap: 20px;
 
-}
+      padding: 14px 0;
 
+      border-bottom:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.14
+        );
+    }
 
-.contact-text {
 
-  margin-bottom:
-    28px;
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.78
-    );
 
-}
 
+    /* ===========================
+       FOOTER
+    =========================== */
 
-.contact-buttons {
+    footer {
 
-  display:
-    flex;
+      padding: 38px 0;
 
-  flex-wrap:
-    wrap;
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.68
+        );
 
-  gap:
-    13px;
+      background:
+        #30231e;
+    }
 
-}
 
+    .footer-grid {
 
-.button {
+      display: flex;
 
-  display:
-    inline-flex;
+      justify-content:
+        space-between;
 
-  align-items:
-    center;
+      align-items:
+        flex-end;
 
-  justify-content:
-    center;
+      gap: 30px;
+    }
 
-  gap:
-    8px;
 
-  padding:
-    14px 21px;
+    .footer-title {
 
-  border-radius:
-    14px;
+      margin-bottom: 5px;
 
-  font-weight:
-    800;
+      color: #ffffff;
 
-  transition:
-    0.25s;
+      font-weight: 800;
+    }
 
-}
 
 
-.button:hover {
+    /* ===========================
+       태블릿
+    =========================== */
 
-  transform:
-    translateY(-3px);
+    @media
+    (max-width: 1000px) {
 
-}
 
+      .topbar-links {
+        display: none;
+      }
 
-.button-kakao {
 
-  color:
-    #ffffff;
+      .topbar-inner {
+        justify-content: center;
+      }
 
-  background:
-    linear-gradient(
-      135deg,
-      #d89a4a,
-      #e7bd73
-    );
 
-}
+      .navbar {
 
+        min-height: 76px;
 
-.button-instagram {
+        grid-template-columns:
+          1fr auto;
+      }
 
-  color:
-    #5f453b;
 
-  background:
-    #ffffff;
+      .nav-menu,
+      .header-contact {
 
-}
+        display: none;
+      }
 
 
-.contact-card {
+      .mobile-menu-button {
 
-  padding:
-    30px;
+        display: block;
+      }
 
-  border-radius:
-    24px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.10
-    );
+      .logo-main {
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.18
-    );
+        font-size: 26px;
+      }
 
-  backdrop-filter:
-    blur(8px);
 
-}
+      .logo-sub {
 
+        margin-left: 46px;
+      }
 
-.contact-row {
 
-  display:
-    flex;
+      .feature-grid {
 
-  justify-content:
-    space-between;
+        grid-template-columns:
+          repeat(2,1fr);
+      }
 
-  gap:
-    20px;
 
-  padding:
-    15px 0;
+      .feature:nth-child(2) {
 
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.14
-    );
+        border-right: 0;
+      }
 
-}
 
+      .feature:nth-child(1),
+      .feature:nth-child(2) {
 
-.contact-row:last-child {
+        border-bottom:
+          1px solid var(--line);
+      }
 
-  border-bottom:
-    none;
 
-}
+      .product-grid {
 
+        grid-template-columns:
+          repeat(2,1fr);
+      }
 
 
-/* ==================================================
-   푸터
-================================================== */
+      .about-grid,
+      .contact-grid {
 
-footer {
+        grid-template-columns:
+          1fr;
+      }
 
-  padding:
-    38px 0;
 
-  background:
-    #30231e;
+      .order-grid {
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.68
-    );
+        grid-template-columns:
+          repeat(2,1fr);
+      }
 
-}
+    }
 
 
-.footer-grid {
 
-  display:
-    flex;
+    /* ===========================
+       모바일
+    =========================== */
 
-  align-items:
-    flex-end;
+    @media
+    (max-width: 650px) {
 
-  justify-content:
-    space-between;
 
-  gap:
-    30px;
+      .container {
 
-}
+        width:
+          calc(100% - 24px);
+      }
 
 
-.footer-title {
+      .topbar {
 
-  margin-bottom:
-    6px;
+        display: none;
+      }
 
-  color:
-    #ffffff;
 
-  font-weight:
-    800;
+      .navbar {
 
-}
+        min-height: 68px;
+      }
 
 
+      .logo-main {
 
-/* ==================================================
-   태블릿
-================================================== */
+        font-size: 22px;
+      }
 
-@media
-(max-width: 1000px) {
 
+      .logo-sub {
 
-  .top-right {
+        margin-left: 36px;
 
-    display:
-      none;
+        font-size: 9px;
+      }
 
-  }
 
+      /*
+        모바일에서 메인 이미지는
+        세로로 좀 더 크게 표시
+      */
 
-  .top-bar-inner {
+      .hero-slide {
 
-    justify-content:
-      center;
+        aspect-ratio: 4 / 5;
 
-  }
+        min-height: 520px;
+      }
 
 
-  .nav {
+      /*
+        원본 이미지 오른쪽 꽃다발을
+        최대한 살려서 보여줌
+      */
 
-    min-height:
-      76px;
+      .hero-slide img {
 
-    grid-template-columns:
-      1fr auto;
+        object-position:
+          63% center;
+      }
 
-  }
 
+      .feature-grid {
 
-  .nav-menu,
-  .kakao-button {
+        grid-template-columns:
+          1fr;
+      }
 
-    display:
-      none;
 
-  }
+      .feature {
 
+        border-right: 0;
 
-  .mobile-menu-button {
+        border-bottom:
+          1px solid var(--line);
+      }
 
-    display:
-      block;
 
-  }
+      .feature:last-child {
 
+        border-bottom: 0;
+      }
 
-  .logo-main {
 
-    font-size:
-      26px;
+      .section {
 
-  }
+        padding: 65px 0;
+      }
 
 
-  .logo-sub {
+      .product-grid {
 
-    margin-left:
-      48px;
+        grid-template-columns:
+          1fr;
+      }
 
-  }
 
+      .product-image {
 
-  .hero-slide {
+        height: 330px;
+      }
 
-    min-height:
-      390px;
 
-  }
+      .order-grid {
 
+        grid-template-columns:
+          1fr;
+      }
 
-  .feature-grid {
 
-    grid-template-columns:
-      repeat(
-        2,
-        1fr
-      );
+      .contact-buttons {
 
-  }
+        flex-direction:
+          column;
+      }
 
 
-  .feature:nth-child(2) {
+      .button {
 
-    border-right:
-      none;
+        width: 100%;
+      }
 
-  }
 
+      .contact-row {
 
-  .feature:nth-child(1),
-  .feature:nth-child(2) {
+        flex-direction:
+          column;
 
-    border-bottom:
-      1px solid
-      var(--line);
+        gap: 4px;
+      }
 
-  }
 
+      .footer-grid {
 
-  .product-grid {
+        flex-direction:
+          column;
 
-    grid-template-columns:
-      repeat(
-        2,
-        1fr
-      );
+        align-items:
+          flex-start;
+      }
 
-  }
+    }
 
 
-  .about-grid,
-  .contact-grid {
 
-    grid-template-columns:
-      1fr;
+    /* ===========================
+       모바일 메뉴
+    =========================== */
 
-  }
+    .mobile-open {
 
+      display: flex !important;
 
-}
+      position: absolute;
 
+      top: 68px;
 
+      left: 12px;
 
-/* ==================================================
-   스마트폰
-================================================== */
+      right: 12px;
 
-@media
-(max-width: 650px) {
+      flex-direction: column;
 
+      align-items: stretch;
 
-  .container {
+      gap: 0;
 
-    width:
-      calc(
-        100% - 24px
-      );
+      padding: 12px 20px;
 
-  }
+      background: #ffffff;
 
+      border-radius: 16px;
 
-  .top-bar {
+      box-shadow:
+        0 20px 40px
+        rgba(60,40,30,0.16);
+    }
 
-    display:
-      none;
 
-  }
+    .mobile-open a {
 
+      padding: 14px 2px;
 
-  .nav {
+      border-bottom:
+        1px solid #eee2dc;
+    }
 
-    min-height:
-      68px;
 
-  }
+    .mobile-open a:last-child {
 
+      border-bottom: 0;
+    }
 
-  .logo-main {
-
-    font-size:
-      22px;
-
-  }
-
-
-  .logo-sub {
-
-    margin-left:
-      37px;
-
-    font-size:
-      9px;
-
-  }
-
-
-  /*
-     모바일에서 메인 이미지가
-     너무 작게 보이지 않도록
-     세로형 영역으로 조정
-  */
-
-  .hero-slide {
-
-    aspect-ratio:
-      4 / 5;
-
-    min-height:
-      520px;
-
-  }
-
-
-  /*
-     오른쪽 꽃다발이
-     잘 보이도록 위치 조정
-  */
-
-  .hero-slide img {
-
-    object-position:
-      62% center;
-
-  }
-
-
-  .feature-grid {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-
-  .feature {
-
-    border-right:
-      none;
-
-    border-bottom:
-      1px solid
-      var(--line);
-
-  }
-
-
-  .feature:last-child {
-
-    border-bottom:
-      none;
-
-  }
-
-
-  .section {
-
-    padding:
-      65px 0;
-
-  }
-
-
-  .product-grid {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-
-  .product-image {
-
-    height:
-      280px;
-
-  }
-
-
-  .contact-buttons {
-
-    flex-direction:
-      column;
-
-  }
-
-
-  .button {
-
-    width:
-      100%;
-
-  }
-
-
-  .contact-row {
-
-    flex-direction:
-      column;
-
-    gap:
-      4px;
-
-  }
-
-
-  .footer-grid {
-
-    flex-direction:
-      column;
-
-    align-items:
-      flex-start;
-
-  }
-
-
-}
-
-
-
-/* ==================================================
-   모바일 메뉴 열림
-================================================== */
-
-.mobile-open {
-
-  display:
-    flex !important;
-
-  position:
-    absolute;
-
-  top:
-    68px;
-
-  left:
-    12px;
-
-  right:
-    12px;
-
-  flex-direction:
-    column;
-
-  align-items:
-    stretch;
-
-  gap:
-    0;
-
-  padding:
-    12px 20px;
-
-  border-radius:
-    16px;
-
-  background:
-    #ffffff;
-
-  box-shadow:
-    0 20px 40px
-    rgba(
-      65,
-      45,
-      38,
-      0.16
-    );
-
-}
-
-
-.mobile-open a {
-
-  padding:
-    14px 2px;
-
-  border-bottom:
-    1px solid
-    #eee3dd;
-
-}
-
-
-.mobile-open a:last-child {
-
-  border-bottom:
-    none;
-
-}
-
-</style>
+  </style>
 
 </head>
 
@@ -1856,18 +1518,17 @@ footer {
 <body>
 
 
-<!-- =================================================
-     상단 안내
-================================================== -->
+<!-- ===========================
+     TOP BAR
+=========================== -->
 
-<div class="top-bar">
+<div class="topbar">
 
-  <div class="container top-bar-inner">
-
+  <div class="container topbar-inner">
 
     <div>
 
-      📍 용인 남사
+      📍 용인  
 
       &nbsp; | &nbsp;
 
@@ -1877,7 +1538,7 @@ footer {
     </div>
 
 
-    <div class="top-right">
+    <div class="topbar-links">
 
       <a href="#collection">
         상품보기
@@ -1893,24 +1554,22 @@ footer {
 
     </div>
 
-
   </div>
 
 </div>
 
 
 
-<!-- =================================================
-     헤더
-================================================== -->
+<!-- ===========================
+     HEADER
+=========================== -->
 
 <header>
 
+  <div class="container navbar">
 
-  <div class="container nav">
 
-
-    <!-- 브랜드 로고 -->
+    <!-- 로고 -->
 
     <a
       href="#top"
@@ -1938,71 +1597,56 @@ footer {
 
     <nav
       class="nav-menu"
-      id="navigation"
+      id="mainMenu"
     >
 
       <a href="#about">
-
         브랜드소개
-
       </a>
 
 
       <a href="#collection">
-
         상품안내
-
       </a>
 
 
       <a href="#collection">
-
         제작사례
+      </a>
 
+
+      <a href="#order">
+        주문방법
       </a>
 
 
       <a href="#contact">
-
-        이용안내
-
-      </a>
-
-
-      <a href="#contact">
-
         고객센터
-
       </a>
 
     </nav>
 
 
 
-    <!--
-      ★ 실제 카카오톡 주소를
-      아래 # 자리에 넣으세요.
-
-      예:
-      href="https://pf.kakao.com/..."
-    -->
+    <!-- 상단 상담버튼 -->
 
     <a
       href="#contact"
-      class="kakao-button"
+      class="header-contact"
     >
 
-      💬 카카오톡 상담하기
+      💬 주문 상담하기
 
     </a>
 
 
 
-    <!-- 모바일 메뉴 -->
+    <!-- 모바일 버튼 -->
 
     <button
       type="button"
       class="mobile-menu-button"
+      id="mobileButton"
       aria-label="메뉴 열기"
     >
 
@@ -2013,7 +1657,6 @@ footer {
 
   </div>
 
-
 </header>
 
 
@@ -2022,9 +1665,9 @@ footer {
 
 
 
-<!-- =================================================
-     메인 이미지
-================================================== -->
+<!-- ===========================
+     MAIN HERO
+=========================== -->
 
 <section class="hero">
 
@@ -2033,23 +1676,17 @@ footer {
 
 
     <!--
-      ★★★★★★★★★★★★★★★★★★★★★★
-
-      첨부하신 이미지를
+      첨부한 이미지를
 
       golden-bloom-main.png
 
-      이름으로 저장하세요.
-
-      index.html과
-      같은 폴더에 넣으면 됩니다.
-
-      ★★★★★★★★★★★★★★★★★★★★★★
+      이름으로 저장 후
+      index.html과 같은 폴더에 넣습니다.
     -->
 
     <img
       src="golden-bloom-main.png"
-      alt="소중한 순간을 꽃으로 기억하게 - 골든블룸 꽃다발"
+      alt="소중한 순간을 꽃으로 기억하게 골든블룸 꽃다발"
     >
 
 
@@ -2059,14 +1696,13 @@ footer {
 
   </div>
 
-
 </section>
 
 
 
-<!-- =================================================
-     특징
-================================================== -->
+<!-- ===========================
+     FEATURES
+=========================== -->
 
 <section class="features">
 
@@ -2078,27 +1714,18 @@ footer {
     <div class="feature">
 
       <div class="feature-icon">
-
         ♡
-
       </div>
-
 
       <div>
 
         <strong>
-
           특별한 날을 더 특별하게
-
         </strong>
 
-
-        <span>
-
-          생일 · 기념일 ·
-          졸업 · 입학까지
-
-        </span>
+        <p>
+          생일 · 기념일 · 졸업 · 입학
+        </p>
 
       </div>
 
@@ -2109,27 +1736,18 @@ footer {
     <div class="feature">
 
       <div class="feature-icon">
-
         🎁
-
       </div>
-
 
       <div>
 
         <strong>
-
-          맞춤 제작 가능
-
+          맞춤 제작
         </strong>
 
-
-        <span>
-
-          원하는 스타일과
-          컬러로 제작
-
-        </span>
+        <p>
+          원하는 색감과 분위기에 맞춰 제작
+        </p>
 
       </div>
 
@@ -2140,27 +1758,18 @@ footer {
     <div class="feature">
 
       <div class="feature-icon">
-
         🌷
-
       </div>
-
 
       <div>
 
         <strong>
-
-          용인 남사 꽃선물
-
+          용인  꽃선물
         </strong>
 
-
-        <span>
-
-          가까운 곳에서
-          편리하게 주문
-
-        </span>
+        <p>
+          가까운 곳에서 편리한 주문
+        </p>
 
       </div>
 
@@ -2171,27 +1780,18 @@ footer {
     <div class="feature">
 
       <div class="feature-icon">
-
         🛍️
-
       </div>
-
 
       <div>
 
         <strong>
-
           예약 제작 & 픽업
-
         </strong>
 
-
-        <span>
-
-          필요한 날짜에 맞춰
-          준비
-
-        </span>
+        <p>
+          원하는 날짜에 맞춰 정성껏 준비
+        </p>
 
       </div>
 
@@ -2200,14 +1800,13 @@ footer {
 
   </div>
 
-
 </section>
 
 
 
-<!-- =================================================
-     상품
-================================================== -->
+<!-- ===========================
+     COLLECTION
+=========================== -->
 
 <section
   class="section collection"
@@ -2256,26 +1855,30 @@ footer {
       <article class="product-card">
 
 
-        <div
-          class="product-image product-one"
-        >
+        <div class="product-image">
+
+          <img
+            src="golden-bloom-main.png"
+            alt="골든블룸 꽃다발"
+          >
+
         </div>
 
 
         <div class="product-info">
 
           <h3>
-
             꽃다발
-
           </h3>
 
+          <p>
+            기념일과 축하의 순간을 위한
+            감성 꽃다발
+          </p>
 
-          <small>
-
+          <span>
             Bouquet
-
-          </small>
+          </span>
 
         </div>
 
@@ -2289,26 +1892,30 @@ footer {
       <article class="product-card">
 
 
-        <div
-          class="product-image product-two"
-        >
+        <div class="product-image">
+
+          <img
+            src="golden-bloom-main.png"
+            alt="골든블룸 꽃바구니"
+          >
+
         </div>
 
 
         <div class="product-info">
 
           <h3>
-
             꽃바구니
-
           </h3>
 
+          <p>
+            풍성하고 고급스러운
+            축하·감사 선물
+          </p>
 
-          <small>
-
+          <span>
             Flower Basket
-
-          </small>
+          </span>
 
         </div>
 
@@ -2322,26 +1929,30 @@ footer {
       <article class="product-card">
 
 
-        <div
-          class="product-image product-three"
-        >
+        <div class="product-image">
+
+          <img
+            src="golden-bloom-main.png"
+            alt="골든블룸 비누꽃다발"
+          >
+
         </div>
 
 
         <div class="product-info">
 
           <h3>
-
             비누꽃다발
-
           </h3>
 
+          <p>
+            아름다운 모습을 오래 간직하는
+            특별한 선물
+          </p>
 
-          <small>
-
+          <span>
             Soap Flower
-
-          </small>
+          </span>
 
         </div>
 
@@ -2355,26 +1966,30 @@ footer {
       <article class="product-card">
 
 
-        <div
-          class="product-image product-four"
-        >
+        <div class="product-image">
+
+          <img
+            src="golden-bloom-main.png"
+            alt="골든블룸 인형꽃다발"
+          >
+
         </div>
 
 
         <div class="product-info">
 
           <h3>
-
             인형꽃다발
-
           </h3>
 
+          <p>
+            졸업식과 입학식에 어울리는
+            사랑스러운 꽃선물
+          </p>
 
-          <small>
-
+          <span>
             Toy Bouquet
-
-          </small>
+          </span>
 
         </div>
 
@@ -2392,9 +2007,9 @@ footer {
 
 
 
-<!-- =================================================
-     브랜드 소개
-================================================== -->
+<!-- ===========================
+     ABOUT
+=========================== -->
 
 <section
   class="section about"
@@ -2405,12 +2020,13 @@ footer {
   <div class="container about-grid">
 
 
+
     <div class="about-image">
 
 
       <img
         src="golden-bloom-main.png"
-        alt="용인 골든블룸 꽃다발"
+        alt="용인  골든블룸"
       >
 
 
@@ -2441,24 +2057,19 @@ footer {
 
       <p>
 
-        골든블룸은 용인 남사에서
-
+        골든블룸은 용인에서
         꽃다발과 꽃바구니,
-
         비누꽃다발과 인형꽃다발을
-
-        정성껏 제작합니다.
+        제작하고 있습니다.
 
         <br><br>
 
         받는 분의 취향과
-
         선물하는 순간을 생각하며
-
         색감과 구성을 고민하고,
 
-        마음까지 자연스럽게 전달되는
-
+        선물하는 사람의 마음까지
+        자연스럽게 전달될 수 있는
         꽃선물을 만들고 있습니다.
 
       </p>
@@ -2471,33 +2082,22 @@ footer {
 
         <div class="about-item">
 
-
           <div class="about-icon">
-
             🎨
-
           </div>
-
 
           <div>
 
             <strong>
-
               감각적인 색감
-
             </strong>
 
-            <br>
-
-            <span>
-
-              부드럽고 조화로운
-              색감의 꽃선물
-
-            </span>
+            <p>
+              전체 분위기를 살린
+              조화로운 컬러 구성
+            </p>
 
           </div>
-
 
         </div>
 
@@ -2505,33 +2105,22 @@ footer {
 
         <div class="about-item">
 
-
           <div class="about-icon">
-
             🎀
-
           </div>
-
 
           <div>
 
             <strong>
-
               용도별 맞춤 제작
-
             </strong>
 
-            <br>
-
-            <span>
-
-              졸업 · 입학 · 기념일 ·
-              감사 · 축하에 맞는 구성
-
-            </span>
+            <p>
+              졸업 · 입학 · 생일 · 기념일 ·
+              감사 · 축하에 맞는 꽃선물
+            </p>
 
           </div>
-
 
         </div>
 
@@ -2539,33 +2128,22 @@ footer {
 
         <div class="about-item">
 
-
           <div class="about-icon">
-
             🤍
-
           </div>
-
 
           <div>
 
             <strong>
-
               정성스러운 제작
-
             </strong>
 
-            <br>
-
-            <span>
-
+            <p>
               한 작품씩 전체적인
-              균형과 분위기를 살펴 제작
-
-            </span>
+              균형과 분위기를 확인하며 제작
+            </p>
 
           </div>
-
 
         </div>
 
@@ -2583,9 +2161,140 @@ footer {
 
 
 
-<!-- =================================================
-     주문 / 상담
-================================================== -->
+<!-- ===========================
+     ORDER GUIDE
+=========================== -->
+
+<section
+  class="section order-guide"
+  id="order"
+>
+
+
+  <div class="container">
+
+
+    <div class="section-header">
+
+
+      <div class="section-label">
+
+        HOW TO ORDER
+
+      </div>
+
+
+      <h2 class="section-title">
+
+        골든블룸 주문 방법
+
+      </h2>
+
+
+      <p class="section-description">
+
+        필요한 내용을 알려주시면
+        원하는 분위기에 맞춰 상담해드립니다.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="order-grid">
+
+
+
+      <div class="order-item">
+
+        <div class="order-number">
+          1
+        </div>
+
+        <h3>
+          용도 선택
+        </h3>
+
+        <p>
+          졸업, 입학, 생일,
+          기념일 등 사용 목적을 알려주세요.
+        </p>
+
+      </div>
+
+
+
+      <div class="order-item">
+
+        <div class="order-number">
+          2
+        </div>
+
+        <h3>
+          색상 & 분위기
+        </h3>
+
+        <p>
+          원하는 컬러와
+          전체적인 느낌을 알려주세요.
+        </p>
+
+      </div>
+
+
+
+      <div class="order-item">
+
+        <div class="order-number">
+          3
+        </div>
+
+        <h3>
+          예산 & 날짜
+        </h3>
+
+        <p>
+          예산과 필요한 날짜를
+          함께 알려주세요.
+        </p>
+
+      </div>
+
+
+
+      <div class="order-item">
+
+        <div class="order-number">
+          4
+        </div>
+
+        <h3>
+          제작 & 수령
+        </h3>
+
+        <p>
+          상담 후 정성껏 제작해
+          안내된 방법으로 수령합니다.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ===========================
+     CONTACT
+=========================== -->
 
 <section
   class="section contact"
@@ -2609,8 +2318,7 @@ footer {
 
       <h2>
 
-        원하는 분위기를
-        알려주세요.
+        원하는 분위기를 알려주세요.
 
         <br>
 
@@ -2619,17 +2327,14 @@ footer {
       </h2>
 
 
-      <p class="contact-text">
+      <p class="contact-description">
 
         사용 목적,
-
         원하는 색상,
-
         예산,
-
         수령 날짜를 알려주시면
 
-        어울리는 구성으로
+        골든블룸의 분위기에 맞춰
         상담해드립니다.
 
       </p>
@@ -2640,12 +2345,12 @@ footer {
 
 
         <!--
-          ★ 카카오톡 실제 주소로 변경
+          실제 카카오톡 채널이 생기면
+          href에 주소를 넣으세요.
         -->
 
         <a
           href="#"
-          target="_blank"
           class="button button-kakao"
         >
 
@@ -2656,16 +2361,16 @@ footer {
 
 
         <!--
-          ★ 인스타그램 실제 주소로 변경
+          실제 인스타그램 주소가 생기면
+          href에 주소를 넣으세요.
         -->
 
         <a
           href="#"
-          target="_blank"
           class="button button-instagram"
         >
 
-          📷 인스타그램 보기
+          📷 인스타그램
 
         </a>
 
@@ -2677,104 +2382,69 @@ footer {
 
 
 
-    <!-- 오른쪽 주문 정보 -->
-
     <div class="contact-card">
 
 
       <div class="contact-row">
 
         <strong>
-
-          제작 품목
-
+          제작 상품
         </strong>
 
-
         <span>
-
           꽃다발 · 꽃바구니
-
         </span>
 
       </div>
 
 
-
       <div class="contact-row">
 
         <strong>
-
           기타 상품
-
         </strong>
 
-
         <span>
-
           비누꽃 · 인형꽃
-
         </span>
 
       </div>
 
 
-
       <div class="contact-row">
 
         <strong>
-
           주문 방식
-
         </strong>
 
-
         <span>
-
           예약 · 맞춤 제작
-
         </span>
 
       </div>
 
 
-
       <div class="contact-row">
 
         <strong>
-
           제작 지역
-
         </strong>
 
-
         <span>
-
-          경기 용인 남사
-
+          경기 용인
         </span>
 
       </div>
 
 
-
       <div class="contact-row">
 
         <strong>
-
-          주문 문의
-
+          상담
         </strong>
 
-
-        <!--
-           ★ 실제 전화번호 입력
-        -->
-
         <span>
-
-          010-0000-0000
-
+          카카오톡 · SNS 문의
         </span>
 
       </div>
@@ -2789,13 +2459,14 @@ footer {
 </section>
 
 
+
 </main>
 
 
 
-<!-- =================================================
-     푸터
-================================================== -->
+<!-- ===========================
+     FOOTER
+=========================== -->
 
 <footer>
 
@@ -2815,16 +2486,13 @@ footer {
 
       <div>
 
-        용인 남사 꽃다발 ·
-        꽃바구니 ·
-        비누꽃 ·
-        인형꽃 제작
+        용인 꽃다발 · 꽃바구니 ·
+        비누꽃 · 인형꽃 제작
 
       </div>
 
 
     </div>
-
 
 
     <div>
@@ -2842,121 +2510,138 @@ footer {
 
 
 
-<!-- =================================================
-     JavaScript
-================================================== -->
+<!-- ===========================
+     JAVASCRIPT
+=========================== -->
 
 <script>
 
 
-const menuButton =
-  document.querySelector(
-    ".mobile-menu-button"
-  );
-
-
-const navigation =
-  document.querySelector(
-    ".nav-menu"
-  );
-
-
-
-/* 모바일 메뉴 열기 / 닫기 */
-
-menuButton.addEventListener(
-  "click",
-  function () {
-
-
-    navigation.classList.toggle(
-      "mobile-open"
+  const mobileButton =
+    document.getElementById(
+      "mobileButton"
     );
 
 
-    if (
-      navigation.classList.contains(
+  const mainMenu =
+    document.getElementById(
+      "mainMenu"
+    );
+
+
+
+  /*
+     모바일 메뉴 열기 / 닫기
+  */
+
+  mobileButton.addEventListener(
+    "click",
+    function () {
+
+
+      mainMenu.classList.toggle(
         "mobile-open"
-      )
-    ) {
-
-      menuButton.innerHTML =
-        "✕";
-
-    }
-
-    else {
-
-      menuButton.innerHTML =
-        "☰";
-
-    }
+      );
 
 
-  }
-);
-
-
-
-/* 메뉴 선택 시 모바일 메뉴 닫기 */
-
-navigation
-.querySelectorAll("a")
-.forEach(
-  function(link) {
-
-
-    link.addEventListener(
-      "click",
-      function() {
-
-
-        navigation.classList.remove(
+      if (
+        mainMenu.classList.contains(
           "mobile-open"
-        );
+        )
+      ) {
 
+        mobileButton.textContent =
+          "✕";
 
-        menuButton.innerHTML =
+      }
+
+      else {
+
+        mobileButton.textContent =
           "☰";
+
+      }
+
+
+    }
+  );
+
+
+
+  /*
+     메뉴를 누르면
+     모바일 메뉴 자동 닫기
+  */
+
+  mainMenu
+    .querySelectorAll("a")
+    .forEach(
+      function(link) {
+
+
+        link.addEventListener(
+          "click",
+          function() {
+
+
+            mainMenu
+              .classList
+              .remove(
+                "mobile-open"
+              );
+
+
+            mobileButton
+              .textContent =
+              "☰";
+
+
+          }
+        );
 
 
       }
     );
 
 
-  }
-);
+
+  /*
+     PC 화면으로 전환하면
+     모바일 메뉴 초기화
+  */
+
+  window.addEventListener(
+    "resize",
+    function() {
 
 
-
-/* PC 화면으로 돌아가면 메뉴 초기화 */
-
-window.addEventListener(
-  "resize",
-  function() {
+      if (
+        window.innerWidth > 1000
+      ) {
 
 
-    if (
-      window.innerWidth > 1000
-    ) {
-
-      navigation.classList.remove(
-        "mobile-open"
-      );
+        mainMenu
+          .classList
+          .remove(
+            "mobile-open"
+          );
 
 
-      menuButton.innerHTML =
-        "☰";
+        mobileButton
+          .textContent =
+          "☰";
+
+
+      }
+
 
     }
-
-
-  }
-);
+  );
 
 
 </script>
 
 
 </body>
+
 </html>
